@@ -818,7 +818,17 @@ teleportBtn.MouseLeave:Connect(function()
 end)
 
 teleportBtn.MouseButton1Click:Connect(function()
+	local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local placeId = 110409866876187 -- thay bằng ID game của bạn
+
+local success, err = pcall(function()
 	TeleportService:Teleport(placeId, Players.LocalPlayer)
+end)
+
+if not success then
+	warn("Teleport lỗi:", err)
+end
 end)
 
 -- Lấy tên và ảnh game
