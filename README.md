@@ -1,2 +1,2 @@
 
-loadstring(game:HttpGet("https://github.com/gojohdkaisenkt2/Gojohdkaisenkt-/blob/main/Idk", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/gojohdkaisenkt2/Gojohdkaisenkt-/refs/heads/main/Idk", true))()
