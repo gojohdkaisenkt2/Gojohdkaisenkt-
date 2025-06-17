@@ -631,7 +631,11 @@ r6.MouseButton1Click:Connect(function()
 execute('require(3436957371):r6("' .. game.Players.LocalPlayer.Name .. '")')
 end)
 unfe.MouseButton1Click:Connect(function()
-game.ReplicatedStorage.RemoteEvent:FireServer(Script.Text)
+if game:GetService("JointsService"):FindFirstChild("_FEBYPASS32") then
+		local Execute=game:GetService("JointsService"):FindFirstChild("_FEBYPASS32"):FireServer(Script.Text) -- execute
+	else
+		warn("Failed to loadstring: Error 404")                                                                           showNotification("hey " .. game.Players.LocalPlayer.Name .. " you forgot scanner or no backdoored")                                                                                                     
+	end
 end)
 
 -- Danh sách button và function tương ứng
