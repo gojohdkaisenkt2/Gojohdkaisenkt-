@@ -847,7 +847,7 @@ local TweenService = game:GetService("TweenService")
 local MarketplaceService = game:GetService("MarketplaceService")
 local Players = game:GetService("Players")
 
-local placeId1 = 0 -- ID game bạn muốn teleport tới
+local placeId1 = 94147798358924
 
 local main1 = Instance.new("Frame", scrollingFrame)
 main1.Size = UDim2.new(0, 400, 0, 100)
@@ -920,9 +920,18 @@ teleportBtn1.MouseLeave:Connect(function()
 end)
 
 teleportBtn1.MouseButton1Click:Connect(function()
+	local TeleportService = game:GetService("TeleportService")
+	local Players = game:GetService("Players")
+	local placeId1 = 94147798358924 -- thay bằng ID game của bạn
 
-end)
+	local success, err = pcall(function()
+		TeleportService:Teleport(placeId1, Players.LocalPlayer)
+	end) -- ← Đóng pcall ở đây
 
+	if not success then
+		warn("Teleport failed:", err)
+	end
+end) -- ← Đóng hàm Connect
 -- Lấy tên và ảnh game
 local success1, info1 = pcall(function()
 	return MarketplaceService:GetProductInfo(placeId1, Enum.InfoType.Asset)
