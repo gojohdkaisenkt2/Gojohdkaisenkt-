@@ -367,7 +367,7 @@ l.BorderSizePixel = 0
 l.Position = UDim2.new(0.64, 0, 0.792114913, 0)
 l.Size = UDim2.new(0, 80, 0, 43)
 l.Font = Enum.Font.SourceSans
-l.Text = "game back"
+l.Text = "luau admin"
 l.TextColor3 = Color3.fromRGB(0, 0, 0)
 l.TextScaled = true
 l.TextSize = 14.000
@@ -387,7 +387,7 @@ local label2 = Instance.new("TextLabel", frame2)
 label2.Size = UDim2.new(0.7, 0, 1, 0)
 label2.BackgroundTransparency = 1                                                                                  label2.Position = UDim2.new(0, 0, 0, 0)
 label2.TextColor3 = Color3.new(1, 1, 1)
-label2.Text = "luau x by gojohdkaisenkt v2.0.0 :D                                                                                   what upd 2                                                                                                                                                                    +hub...                                                                                                                                                                                                                                                                                                                         cre:                                                                                                                                                                    scripting: gojohdkaisenkt                                                                                                                                                                     Owner: gojohdkaisenkt"
+label2.Text = "luau x by gojohdkaisenkt v3.0.0 :D                                                                                   what upd 3                                                                                                                                                                   +admin selected player                                                                                                                                                                                                                                                                                                                      cre:                                                                                                                                                                    scripting: gojohdkaisenkt                                                                                                                                                                     Owner: gojohdkaisenkt"
 label2.TextScaled = true
 label2.Font = Enum.Font.SourceSans                                                                                                                                                                                     label2.ZIndex = 3                                                                                                                   local Script = Instance.new("TextBox", contentFrame)
 Script.Name = "Script"
@@ -618,7 +618,7 @@ if game:GetService("JointsService"):FindFirstChild("_FEBYPASS32") then
 
 wtf.Text = "fd:)"
 
-execute("local h = Instance.new('Hint') h.Parent = Workspace h.Text = 'luau x v2 faster scanner| by gojohdkaisenkt' wait(30) h:Remove()")
+execute("local h = Instance.new('Hint') h.Parent = Workspace h.Text = 'luau x v3 faster scanner| by gojohdkaisenkt' wait(30) h:Remove()")
 else
 wtf.Text = "scanning..."
 wait (2)
@@ -692,7 +692,7 @@ execute("require(7192763922).load('"..game.Players.LocalPlayer.Name.."')")
         execute("require(10304477576).AntiSkid('"..game.Players.LocalPlayer.Name.."')")
     end,
 ["spawn noob"] = function()
-    execute("local Players = game:GetService('Players') local username = 'superOOFman17' local success, userId = pcall(function() return Players:GetUserIdFromNameAsync(username) end) if not success then warn('Không tìm thấy người dùng:', username) return end local npc = Players:CreateHumanoidModelFromUserId(userId) npc.Name = 'Noob by gojohdkaisenkt' npc.Parent = workspace local hrp = npc:WaitForChild('HumanoidRootPart', 5) if not hrp then warn('Không tìm thấy HumanoidRootPart trong mô hình NPC.') return end local targetPlayer = Players:GetPlayers()[1] if not targetPlayer or not targetPlayer.Character then warn('Không tìm thấy player hoặc nhân vật.') return end local playerHRP = targetPlayer.Character:FindFirstChild('HumanoidRootPart') if not playerHRP then warn('Không tìm thấy HumanoidRootPart của player.') return end npc:SetPrimaryPartCFrame(playerHRP.CFrame * CFrame.new(0, 0, -5))")
+    execute("local Players = game:GetService('Players') local username = 'CinnabarMothMan' local success, userId = pcall(function() return Players:GetUserIdFromNameAsync(username) end) if not success then warn('Không tìm thấy người dùng:', username) return end local npc = Players:CreateHumanoidModelFromUserId(userId) npc.Name = 'Noob by gojohdkaisenkt' npc.Parent = workspace local hrp = npc:WaitForChild('HumanoidRootPart', 5) if not hrp then warn('Không tìm thấy HumanoidRootPart trong mô hình NPC.') return end local targetPlayer = Players:GetPlayers()[1] if not targetPlayer or not targetPlayer.Character then warn('Không tìm thấy player hoặc nhân vật.') return end local playerHRP = targetPlayer.Character:FindFirstChild('HumanoidRootPart') if not playerHRP then warn('Không tìm thấy HumanoidRootPart của player.') return end npc:SetPrimaryPartCFrame(playerHRP.CFrame * CFrame.new(0, 0, -5))")
 end,
     ["spin all"] = function()                                                                                                                                                      execute("for _,plr in ipairs(game.Players:GetPlayers()) do if plr.Character and plr.Character:FindFirstChild('HumanoidRootPart') then local gyro=Instance.new('BodyGyro') gyro.MaxTorque=Vector3.new(0,math.huge,0) gyro.P=10000 gyro.CFrame=plr.Character.HumanoidRootPart.CFrame gyro.Parent=plr.Character.HumanoidRootPart spawn(function() while gyro.Parent and plr.Character and plr.Character:FindFirstChild('Humanoid') and plr.Character.Humanoid.Health>0 do gyro.CFrame=gyro.CFrame*CFrame.Angles(0,math.rad(10),0) wait(0.001) end end) end end")
     end,
@@ -736,6 +736,7 @@ else
 end                                                                                                                                                          end
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
+
 -- ScrollingFrame chính
 local scrollingFrame = Instance.new("ScrollingFrame")
 scrollingFrame.Size = UDim2.new(0, 560, 0, 279)
@@ -746,19 +747,16 @@ scrollingFrame.ScrollBarThickness = 8
 scrollingFrame.CanvasSize = UDim2.new(0, 0, 2, 0)
 scrollingFrame.ZIndex = 5
 scrollingFrame.Parent = frame4
-local layout = Instance.new("UIGridLayout", scrollingFrame)
-layout.SortOrder = Enum.SortOrder.LayoutOrder
-layout.CellSize = UDim2.new(0, 120, 0, 40) -- mỗi nút rộng 120, cao 40
-layout.CellPadding = UDim.new(10) -- khoảng cách giữa các nút
 
 -- Frame chứa danh sách player
 local frame0 = Instance.new("Frame", scrollingFrame)
 frame0.AnchorPoint = Vector2.new(0, 0)
 frame0.Position = UDim2.new(0, 0, 0, 0)
-frame0.Size = UDim2.new(0, 200, 0, 150)
+frame0.Size = UDim2.new(0, 230, 0, 150)
 frame0.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 frame0.BorderSizePixel = 0
 frame0.ZIndex = 4
+frame0.AutomaticSize = Enum.AutomaticSize.None
 Instance.new("UICorner", frame0).CornerRadius = UDim.new(0, 10)
 
 -- Scroll trong frame0
@@ -782,77 +780,85 @@ local function createPlayerButton(plr)
 	button0.Size = UDim2.new(1, 0, 0, 35)
 	button0.Text = (plr.Name == "gojohdkaisenkt") and (plr.Name .. "  [owner]👑") or plr.Name
 	button0.Font = Enum.Font.GothamBold
-	button0.TextScaled = true
+	button0.TextScaled = false
 	button0.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
 	button0.TextColor3 = Color3.new(1, 1, 1)
 	button0.ZIndex = 5
 	button0.Name = plr.Name
 	button0.Parent = scroll10
-
+Instance.new("UICorner", button0).CornerRadius = UDim.new(0, 10)
 	-- Thumbnail
 	local success, thumb = pcall(function()
 		return Players:GetUserThumbnailAsync(plr.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size48x48)
 	end)
-	if success then
+	if success and thumb then
 		local img = Instance.new("ImageLabel", button0)
 		img.Image = thumb
 		img.Size = UDim2.new(0, 32, 0, 32)
 		img.Position = UDim2.new(0, 5, 0.5, -16)
 		img.BackgroundTransparency = 1
-		img.ZIndex = 6
+		img.ZIndex = 6                                                                                                                                                                        Instance.new("UICorner", img).CornerRadius = UDim.new(1, 0)
 	end
-
 	local stroke0 = Instance.new("UIStroke", button0)
 	stroke0.Color = Color3.fromRGB(0, 255, 100)
-	stroke0.Thickness = 6
+	stroke0.Thickness = 2
 	stroke0.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 	stroke0.Transparency = 0
 	stroke0.Enabled = false
 
-	button0.MouseButton1Click:Connect(function()
-		if plr.Name == "gojohdkaisenkt" then
-			showNotification("u can't select me I'm it's owner script")
-			return
-		end
+button0.MouseButton1Click:Connect(function()
+	local playerName = button0.Name -- chính xác tên gốc
+	local plr = Players:FindFirstChild(playerName)
 
-		if selectedButton and selectedButton ~= button0 then
-			selectedButton:FindFirstChildOfClass("UIStroke").Enabled = false
-		end
+	if plr and plr.Name == "gojohdkaisenkt" then
+		showNotification("u can't select me I'm the owner-_-")
+		return
+	end
 
-		if selectedButton == button0 then
-			stroke0.Enabled = not stroke0.Enabled
-			if not stroke0.Enabled then
-				selectedButton = nil
-			end
-		else
-			stroke0.Enabled = true
-			selectedButton = button0
+	-- Bỏ stroke nút trước
+	if selectedButton and selectedButton ~= button0 then
+		local prevStroke = selectedButton:FindFirstChildOfClass("UIStroke")
+		if prevStroke then
+			prevStroke.Enabled = false
 		end
-	end)
-end
+	end
 
--- Tạo nút ban đầu
+	-- Bật/tắt stroke nút hiện tại
+	if selectedButton == button0 then
+		stroke0.Enabled = not stroke0.Enabled
+		if not stroke0.Enabled then
+			selectedButton = nil
+		end
+	else
+		stroke0.Enabled = true
+		selectedButton = button0
+	end
+
+	-- Debug
+	if plr then
+		print("Đã chọn player:", plr.Name)
+	else
+		warn("Không tìm thấy player:", playerName)
+	end
+end)                                                                                                                                              end
+-- Tạo các button ban đầu
 for _, plr in ipairs(Players:GetPlayers()) do
 	createPlayerButton(plr)
 end
 
--- Cập nhật canvas tự động
+-- Cập nhật CanvasSize
 layout0:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
 	scroll10.CanvasSize = UDim2.new(0, 0, 0, layout0.AbsoluteContentSize.Y)
 end)
 
 -- Khi player vào/thoát
-Players.PlayerAdded:Connect(function(plr)
-	createPlayerButton(plr)
-end)
-
+Players.PlayerAdded:Connect(createPlayerButton)
 Players.PlayerRemoving:Connect(function(plr)
 	local btn = scroll10:FindFirstChild(plr.Name)
 	if btn then
 		btn:Destroy()
 	end
 end)
-
 -- FPS & Ping
 local fpsLabel = Instance.new("TextLabel", contentFrame)
 fpsLabel.Size = UDim2.new(1, -10, 0, 30)
@@ -887,15 +893,16 @@ RunService.RenderStepped:Connect(function()
 		local ping = math.floor(Players.LocalPlayer:GetNetworkPing() * 1000)
 		pingLabel.Text = "Ping: " .. ping .. " ms"
 	end
-end)                                                                                                                                                   
+end)
+
 local mainFrame = Instance.new("Frame", scrollingFrame)
 mainFrame.Size = UDim2.new(0, 300, 0, 200)
-mainFrame.Position = UDim2.new(0, 0, 0, 0)
-mainFrame.AnchorPoint = Vector2.new(0, 0)
+mainFrame.Position = UDim2.new(0.4, 0, 0, 0)
 mainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 mainFrame.BorderSizePixel = 0
 mainFrame.ZIndex = 5
 mainFrame.BackgroundTransparency = 1
+
 -- Label "Text:"
 local label = Instance.new("TextLabel", mainFrame)
 label.Text = "Text:"
@@ -909,7 +916,7 @@ label.ZIndex = 5
 
 -- TextBox nhập
 local inputBox = Instance.new("TextBox", mainFrame)
-inputBox.PlaceholderText = "Reason/Text"
+inputBox.PlaceholderText = "Reason/Name"
 inputBox.Size = UDim2.new(0, 220, 0, 30)
 inputBox.Position = UDim2.new(0, 70, 0, 10)
 inputBox.Text = ""
@@ -920,8 +927,8 @@ inputBox.TextScaled = true
 inputBox.BorderSizePixel = 0
 inputBox.ZIndex = 5
 
--- Hàm tạo nút
-local function createButton(text, posX, posY)
+-- Hàm tạo nút có xử lý khi click
+local function createButton(text, posX, posY, onClick)
 	local btn = Instance.new("TextButton", mainFrame)
 	btn.Size = UDim2.new(0, 120, 0, 35)
 	btn.Position = UDim2.new(0, posX, 0, posY)
@@ -932,11 +939,222 @@ local function createButton(text, posX, posY)
 	btn.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 	btn.BorderSizePixel = 0
 	btn.ZIndex = 5
+
+	if typeof(onClick) == "function" then
+		btn.MouseButton1Click:Connect(onClick)
+	end
+
 	return btn
 end
 
--- Tạo 4 nút chức năng
-createButton("Kick", 10, 50)
-createButton("Ban", 160, 50)
-createButton("Goto", 10, 100)
-createButton("Bring", 160, 100)
+createButton("Kick", 10, 50).MouseButton1Click:Connect(function()
+	if not selectedButton then
+		showNotification("u forgot selecte player")
+		return
+	end
+
+	local playerName = selectedButton.Text -- Lấy từ button0.Text
+	local reason = inputBox.Text ~= "" and inputBox.Text or "No reason provided."
+
+	execute("for _,plr in pairs(game:GetService('Players'):GetPlayers()) do if plr.Name=='" .. playerName .. "' then plr:Kick('Kicked by Admin | Reason: " .. reason .. "') end end")
+end)
+
+createButton("refresh", 160, 50, function()
+if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute("for _,plr in pairs(game:GetService('Players'):GetPlayers()) do " ..
+"if plr.Name=='" .. playerName .. "' then " ..
+"local hrp = plr.Character and plr.Character:FindFirstChild('HumanoidRootPart') " ..
+"local pos = hrp and hrp.CFrame " ..
+"plr:LoadCharacter() " ..
+"if pos then plr.Character:WaitForChild('HumanoidRootPart').CFrame = pos end " ..
+"end end") end)
+createButton("name", 10, 100, function()
+if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+local text0 = inputBox.Text ~= "" and inputBox.Text or "VIVA LA LUAU X SS"
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'")if p and p.Character and p.Character:FindFirstChild("Head")then local bb=Instance.new("BillboardGui");bb.Name="FakeBubble";bb.Size=UDim2.new(0,200,0,50);bb.StudsOffset=Vector3.new(0,3,0);bb.Adornee=p.Character.Head;bb.AlwaysOnTop=true;bb.Parent=p.Character.Head;local l=Instance.new("TextLabel",bb);l.Size=UDim2.new(1,0,1,0);l.BackgroundTransparency=1;l.TextScaled=true;l.Text="'..text0..'";l.Font=Enum.Font.SourceSansBold;l.TextColor3=Color3.new(1,1,1);l.TextStrokeTransparency=0.5;local grad=Instance.new("UIGradient",l);grad.Color=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(255,0,0)),ColorSequenceKeypoint.new(1,Color3.fromRGB(0,0,255))});local UIS=Instance.new("UIScale",bb);UIS.Scale=0;local ts=game:GetService("TweenService");ts:Create(UIS,TweenInfo.new(0.25,Enum.EasingStyle.Elastic,Enum.EasingDirection.Out),{Scale=1}):Play();game:GetService("Debris"):AddItem(bb,999999999)end')
+end)
+createButton("Bring", 160, 100, function()
+	if not selectedButton then
+showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+local callerName = game.Players.LocalPlayer.Name
+
+execute('local p1=game.Players:FindFirstChild("'..playerName..'")local p2=game.Players:FindFirstChild("'..callerName..'")if p1 and p2 and p1.Character and p2.Character then local r1=p1.Character:FindFirstChild("HumanoidRootPart")local r2=p2.Character:FindFirstChild("HumanoidRootPart")if r1 and r2 then r1.CFrame=r2.CFrame+Vector3.new(3,0,0)end end')
+end)                                                                                                                                                       
+
+-- Frame ngoài
+local fr = Instance.new("Frame", scrollingFrame)
+fr.Name = "MainFrame"
+fr.Size = UDim2.new(0, 600, 0, 200)
+fr.Position = UDim2.new(0, 0, 0.5, -125)
+fr.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+fr.BorderSizePixel = 0
+
+-- Label tiêu đề
+local title = Instance.new("TextLabel", fr)
+title.Size = UDim2.new(1, 0, 0, 30)
+title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+title.Text = "others"
+title.Font = Enum.Font.SourceSansBold
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextScaled = true
+title.BorderSizePixel = 0
+-- ScrollingFrame cho nút
+local scrollo = Instance.new("ScrollingFrame", fr)
+scrollo.Position = UDim2.new(0, 0, 0, 30)
+scrollo.Size = UDim2.new(1, 0, 1, -30)
+scrollo.BackgroundTransparency = 1
+scrollo.ScrollBarThickness = 6
+scrollo.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+-- Layout xếp nút
+local layouto = Instance.new("UIGridLayout", scrollo)
+layouto.CellSize = UDim2.new(0.31, -5, 0, 35)
+layouto.CellPadding = UDim2.new(0, 5, 0, 5)
+layouto.SortOrder = Enum.SortOrder.LayoutOrder
+
+-- Danh sách nút
+local buttonNames = {
+	"-10size", "x10size", "pop up",
+	"f3x", "char gojohdkaisenkt", "delete",
+	"fezee", "soon", "soon",
+	"soon", "soon"
+}
+
+-- Hàm tương ứng
+local buttonFunctions = {
+	["-10size"] = function()
+		if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'") if p and p.Character then if not p.Character.PrimaryPart then p.Character.PrimaryPart = p.Character:FindFirstChild("HumanoidRootPart") end if p.Character.PrimaryPart then p.Character:ScaleTo(0.1) end end')
+	end,
+
+	["x10size"] = function()
+			if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'") if p and p.Character then if not p.Character.PrimaryPart then p.Character.PrimaryPart = p.Character:FindFirstChild("HumanoidRootPart") end if p.Character.PrimaryPart then p.Character:ScaleTo(10) end end')
+	end,
+
+	["pop up"] = function()
+if not selectedButton then
+showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local plr=game.Players:FindFirstChild("'..playerName..'") if plr then spawn(function() for i=1,103306305577320 do local gui=Instance.new("ScreenGui",plr:WaitForChild("PlayerGui")) gui.ResetOnSpawn=false local img=Instance.new("ImageLabel",gui) img.Size=UDim2.new(0,100,0,100) img.Position=UDim2.new(math.random(),0,math.random(),0) img.BackgroundTransparency=1 img.Image="rbxassetid://103306305577320" wait(0.1) end end) end')
+	end,
+
+	["f3x"] = function()
+		if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('require(4869378421).F3X("'..playerName..'")')
+	end,
+
+	["char gojohdkaisenkt"] = function()
+if not selectedButton then
+	showNotification("Bạn chưa chọn người chơi!")
+	return
+end
+
+local playerName = selectedButton.Text
+local skinUsername = "gojohdkaisenkt"
+
+execute("local P=game:GetService('Players') local t=P:FindFirstChild('"..playerName.."') if not t then return end local ok,uid=pcall(function() return P:GetUserIdFromNameAsync('"..skinUsername.."') end) if not ok then return end local d=P:GetHumanoidDescriptionFromUserId(uid) t.CharacterAdded:Connect(function(c) local h=c:FindFirstChildWhichIsA('Humanoid') if h then h:ApplyDescription(d) end end) if t.Character then local h=t.Character:FindFirstChildWhichIsA('Humanoid') if h then h:ApplyDescription(d) end end")
+	end,
+
+	["delete"] = function()
+		if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'") if p and p.Character then p.Character:Destroy() end')
+	end,
+
+	["feeze"] = function()
+		if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'") if p and p.Character then for _,v in ipairs(p.Character:GetDescendants()) do if v:IsA("BasePart") then v.Anchored=true end end end')
+	end,
+
+	["Open Door"] = function()
+
+	end,
+
+	["Shutdown"] = function()
+		
+	end,
+
+	["YouTube"] = function()
+		
+	end
+}
+
+-- Tạo các nút
+for _, name in ipairs(buttonNames) do
+	local btn = Instance.new("TextButton", scrollo)
+	btn.Text = name
+	btn.Font = Enum.Font.SourceSans
+	btn.TextSize = 14
+	btn.TextColor3 = Color3.new(1, 1, 1)
+	btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	btn.BorderSizePixel = 0
+	btn.AutoButtonColor = true
+
+	local corner = Instance.new("UICorner")
+	corner.CornerRadius = UDim.new(1, 0)
+	corner.Parent = btn
+
+	btn.MouseButton1Click:Connect(function()
+		if buttonFunctions[name] then
+			buttonFunctions[name]()
+		else
+			print("Clicked:", name)
+		end
+	end)
+end
+
+-- Tự động chỉnh CanvasSize
+scrollo.ChildAdded:Connect(function()
+	task.wait()
+	scrollo.CanvasSize = UDim2.new(0, 0, 0, layouto.AbsoluteContentSize.Y + 10)
+end)
