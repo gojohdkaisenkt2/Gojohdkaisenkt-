@@ -1106,4 +1106,93 @@ end
 scrollo.ChildAdded:Connect(function()
 	task.wait()
 	scrollo.CanvasSize = UDim2.new(0, 0, 0, layouto.AbsoluteContentSize.Y + 10)
+end)                                                                                                                                                                                                         
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 60, 0, 60)
+frame.AnchorPoint = Vector2.new(1, 1)
+frame.Position = UDim2.new(1, -20, 1, -20)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Parent = gui
+Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 12)
+
+local icon = Instance.new("ImageLabel")
+icon.Size = UDim2.new(1, 0, 1, 0)
+icon.BackgroundTransparency = 1
+icon.Image = "rbxassetid://76181608348088"
+icon.Parent = frame
+
+local button = Instance.new("TextButton")
+button.BackgroundTransparency = 1
+button.Size = UDim2.new(1, 0, 1, 0)
+button.Text = ""
+button.Parent = frame
+
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://6026984224" 
+sound.Volume = 1
+sound.PlayOnRemove = false
+sound.Parent = frame
+
+local label = Instance.new("TextLabel")
+label.Text = "Copied success"
+label.Size = UDim2.new(0, 60, 0, 60)
+label.Position = UDim2.new(1, -10, 1, -50)
+label.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+label.TextColor3 = Color3.new(1, 1, 1)
+label.Font = Enum.Font.GothamSemibold
+label.TextScaled = true
+label.TextXAlignment = Enum.TextXAlignment.Left
+label.Visible = false
+label.ZIndex = 10
+label.Parent = gui
+Instance.new("UICorner", label).CornerRadius = UDim.new(0, 6)
+
+button.MouseButton1Click:Connect(function()
+	local text = "https://discord.gg/4S9WBqhk"
+	if setclipboard then
+		setclipboard(text)
+	elseif toclipboard then
+		toclipboard(text)
+	end
+
+	sound:Play()
+
+	label.Visible = true
+	label.Size = UDim2.new(0, 0, 0, 60)
+	label.Position = UDim2.new(1, -10, 1, -50)
+
+	label:TweenSizeAndPosition(
+		UDim2.new(0, 180, 0, 60),
+		UDim2.new(1, -260, 1, -80),
+		Enum.EasingDirection.Out,
+		Enum.EasingStyle.Quad,
+		0.4,
+		true
+	)
+
+	wait(2)
+
+	label:TweenSizeAndPosition(
+		UDim2.new(0, 0, 0, 30),
+		UDim2.new(1, -10, 1, -50),
+		Enum.EasingDirection.In,
+		Enum.EasingStyle.Quad,
+		0.4,
+		true
+	)
+
+	wait(0.5)
+	label.Visible = false
+
+	frame:TweenSize(
+		UDim2.new(0, 0, 0, 0),
+		Enum.EasingDirection.In,
+		Enum.EasingStyle.Back,
+		0.4,
+		true
+	)
+	wait(0.4)
+	gui:Destroy()
 end)
