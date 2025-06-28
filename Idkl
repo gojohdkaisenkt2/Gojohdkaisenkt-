@@ -1,0 +1,122 @@
+-- Roblox Obfuscator UI
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local InputBox = Instance.new("TextBox")
+local OutputBox = Instance.new("TextBox")
+local ObfuscateButton = Instance.new("TextButton")
+local CopyButton = Instance.new("TextButton")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Name = "ObfuscatorUI"
+
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(0, 400, 0, 250)
+Frame.Position = UDim2.new(0.5, -200, 0.5, -125)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderSizePixel = 0
+Frame.ClipsDescendants = true
+Frame.Active = true
+Frame.Draggable = true
+
+Title.Parent = Frame
+Title.Text = "Obfuscation by gojohdkaisenkt v1.0.0"
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.BackgroundTransparency = 1
+Title.TextColor3 = Color3.fromRGB(80, 80, 80)
+Title.Font = Enum.Font.SourceSans
+Title.TextSize = 18
+
+InputBox.Parent = Frame
+InputBox.Size = UDim2.new(0, 180, 0, 150)
+InputBox.Position = UDim2.new(0, 10, 0, 40)
+InputBox.Text = ""
+InputBox.PlaceholderText = "Paste your Lua script here"
+InputBox.TextWrapped = true
+InputBox.TextYAlignment = Enum.TextYAlignment.Top
+InputBox.TextXAlignment = Enum.TextXAlignment.Left
+InputBox.ClearTextOnFocus = false
+InputBox.MultiLine = true
+InputBox.BackgroundColor3 = Color3.fromRGB(120, 130, 180)
+
+OutputBox.Parent = Frame
+OutputBox.Size = UDim2.new(0, 180, 0, 150)
+OutputBox.Position = UDim2.new(0, 210, 0, 40)
+OutputBox.Text = ""
+OutputBox.PlaceholderText = "Obfuscated output will appear here"
+OutputBox.TextWrapped = true
+OutputBox.TextYAlignment = Enum.TextYAlignment.Top
+OutputBox.TextXAlignment = Enum.TextXAlignment.Left
+OutputBox.ClearTextOnFocus = false
+OutputBox.MultiLine = true
+OutputBox.BackgroundColor3 = Color3.fromRGB(120, 130, 180)
+
+ObfuscateButton.Parent = Frame
+ObfuscateButton.Text = "Obfuscate"
+ObfuscateButton.Position = UDim2.new(0, 40, 0, 200)
+ObfuscateButton.Size = UDim2.new(0, 100, 0, 30)
+ObfuscateButton.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+
+CopyButton.Parent = Frame
+CopyButton.Text = "Copy"
+CopyButton.Position = UDim2.new(0, 260, 0, 200)
+CopyButton.Size = UDim2.new(0, 100, 0, 30)
+CopyButton.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+
+-- External real obfuscation API simulation
+local function realObfuscateSystem(code)
+    -- In production, this function would make a request to a secure API endpoint
+    -- For demonstration, we simulate the obfuscation using encoded output
+    local encoded = ""
+    for i = 1, #code do
+        encoded = encoded .. "\\" .. string.byte(code:sub(i, i))
+    end
+    return "loadstring(\"" .. encoded .. "\")()"
+end
+
+-- Realistic junk code
+local function generateJunk()
+    local junk = {
+        "local _a = 2^3 / math.sqrt(64)",
+        "if not _a then error('Junk logic') end",
+        "for _=1,1 do local __=math.random() end",
+        "do local __x=0 end",
+        "local __junk = 'string' .. tostring(math.pi)"
+    }
+    return table.concat(junk, "\n")
+end
+
+local function injectJunkBetween(code)
+    local lines = {}
+    for line in code:gmatch("[^\n]+") do
+        table.insert(lines, line)
+        table.insert(lines, generateJunk())
+    end
+    return table.concat(lines, "\n")
+end
+
+local function fullObfuscate(inputCode)
+    local core = realObfuscateSystem(inputCode)
+    local header = "--《[[ Obfuscated gojohdkaisenkt v1.0.0☆]]》"
+    local topJunk = generateJunk()
+    local midInjected = injectJunkBetween(core)
+    local bottomJunk = generateJunk()
+    return header .. "\n" .. topJunk .. "\n" .. midInjected .. "\n" .. bottomJunk
+end
+
+ObfuscateButton.MouseButton1Click:Connect(function()
+    local input = InputBox.Text
+    if input and input ~= "" then
+        local result = fullObfuscate(input)
+        OutputBox.Text = result
+    else
+        OutputBox.Text = "-- Please input a script to obfuscate."
+    end
+end)
+
+CopyButton.MouseButton1Click:Connect(function()
+    if OutputBox.Text ~= "" then
+        setclipboard(OutputBox.Text)
+    end
+end)
