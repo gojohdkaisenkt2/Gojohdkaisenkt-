@@ -628,7 +628,6 @@ local function v444() local v498=Instance.new("Script",v9);
 local v499=v498.Parent;
 local v500=false;
 function changeColors() while v500 do for v702,v703 in ipairs(workspace:GetDescendants()) do if v703:IsA("BasePart") then v703.BrickColor=BrickColor.Random();
-
 end 
 end wait(0.2 -0 );
 
