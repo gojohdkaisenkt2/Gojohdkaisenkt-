@@ -1,122 +1,1598 @@
--- Roblox Obfuscator UI
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
 
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
-local InputBox = Instance.new("TextBox")
-local OutputBox = Instance.new("TextBox")
-local ObfuscateButton = Instance.new("TextButton")
-local CopyButton = Instance.new("TextButton")
+]]--
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.Name = "ObfuscatorUI"
+local v0=Instance.new("ScreenGui");
+local v1=Instance.new("Frame");
+local v2=Instance.new("ScrollingFrame");
+local v3=Instance.new("Frame");
+local v4=Instance.new("TextButton");
+local v5=Instance.new("TextButton");
+local v6=Instance.new("TextButton");
+local v7=Instance.new("TextButton");
+local v8=Instance.new("TextButton");
+local v9=Instance.new("TextButton");
+local v10=Instance.new("TextButton");
+local v11=Instance.new("TextButton");
+local v12=Instance.new("TextButton");
+local v13=Instance.new("TextButton");
+local v14=Instance.new("TextButton");
+local v15=Instance.new("TextButton");
+local v16=Instance.new("TextLabel");
+local v17=Instance.new("ImageLabel");
+local v18=Instance.new("TextButton");
+local v19=Instance.new("TextButton");
+local v20=Instance.new("TextButton");
+local v21=Instance.new("TextButton");
+local v22=Instance.new("TextButton");
+local v23=Instance.new("TextButton");
+local v24=Instance.new("TextButton");
+local v25=Instance.new("TextButton");
+local v26=Instance.new("TextButton");
+local v27=Instance.new("TextButton");
+local v28=Instance.new("TextButton");
+local v29=Instance.new("TextButton");
+local v30=Instance.new("TextButton");
+local v31=Instance.new("TextButton");
+local v32=Instance.new("TextButton");
+local v33=Instance.new("TextLabel");
+local v34=Instance.new("TextLabel");
+local v35=Instance.new("TextLabel");
+local v36=Instance.new("TextLabel");
+v0.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui");
+v0.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;
+v0.ResetOnSpawn=false;
+v1.Parent=v0;
+v1.BackgroundColor3=Color3.fromRGB(0 -0 ,374 -(123 + 251) ,0);
+v1.BorderColor3=Color3.fromRGB(0 -0 ,951 -(208 + 490) ,22 + 233 );
+v1.BorderSizePixel=3;
+v1.Position=UDim2.new(0 + 0 ,836 -(660 + 176) ,0.0370879136,0 + 0 );
+v1.Size=UDim2.new(202 -(14 + 188) ,361,675 -(534 + 141) ,216 + 319 );
+v2.Parent=v1;
+v2.Active=true;
+v2.BackgroundColor3=Color3.fromRGB(43,39 + 4 ,42 + 1 );
+v2.BorderColor3=Color3.fromRGB(0 -0 ,0 -0 ,0);
+v2.BorderSizePixel=0 -0 ;
+v2.Position=UDim2.new(0.0221606642 + 0 ,0,0.0242990647 + 0 ,396 -(115 + 281) );
+v2.Size=UDim2.new(0 -0 ,285 + 59 ,0 -0 ,1866 -1357 );
+v3.Parent=v2;
+v3.BackgroundColor3=Color3.fromRGB(1122 -(550 + 317) ,255,368 -113 );
+v3.BackgroundTransparency=1;
+v3.BorderColor3=Color3.fromRGB(0 -0 ,0 -0 ,0);
+v3.BorderSizePixel=0;
+v3.Size=UDim2.new(0,646 -(134 + 151) ,1665 -(970 + 695) ,1075);
+v4.Parent=v3;
+v4.BackgroundColor3=Color3.fromRGB(0 -0 ,0,1990 -(582 + 1408) );
+v4.BorderColor3=Color3.fromRGB(0 -0 ,317 -64 ,960 -705 );
+v4.Position=UDim2.new(1824.0193905812 -(1195 + 629) ,0 -0 ,0.0930232555,241 -(187 + 54) );
+v4.Size=UDim2.new(780 -(162 + 618) ,66 + 27 ,0,34 + 16 );
+v4.Font=Enum.Font.SourceSans;
+v4.Text="Decal";
+v4.TextColor3=Color3.fromRGB(543 -288 ,428 -173 ,255);
+v4.TextScaled=true;
+v4.TextSize=2 + 12 ;
+v4.TextWrapped=true;
+v5.Parent=v3;
+v5.BackgroundColor3=Color3.fromRGB(1636 -(1373 + 263) ,0,0);
+v5.BorderColor3=Color3.fromRGB(0,1253 -(451 + 549) ,81 + 174 );
+v5.Position=UDim2.new(0.315789461 -0 ,0,0.0930232555,0 -0 );
+v5.Size=UDim2.new(0,1477 -(746 + 638) ,0 + 0 ,75 -25 );
+v5.Font=Enum.Font.SourceSans;
+v5.Text="Decal 2";
+v5.TextColor3=Color3.fromRGB(255,596 -(218 + 123) ,1836 -(1535 + 46) );
+v5.TextScaled=true;
+v5.TextSize=14 + 0 ;
+v5.TextWrapped=true;
+v6.Parent=v3;
+v6.BackgroundColor3=Color3.fromRGB(0,0 + 0 ,0);
+v6.BorderColor3=Color3.fromRGB(560 -(306 + 254) ,253,255);
+v6.Position=UDim2.new(0.601108015 + 0 ,0 -0 ,0.0930232555,1467 -(899 + 568) );
+v6.Size=UDim2.new(0 + 0 ,224 -131 ,603 -(268 + 335) ,340 -(60 + 230) );
+v6.Font=Enum.Font.SourceSans;
+v6.Text="Sky";
+v6.TextColor3=Color3.fromRGB(255,827 -(426 + 146) ,31 + 224 );
+v6.TextScaled=true;
+v6.TextSize=1470 -(282 + 1174) ;
+v6.TextWrapped=true;
+v7.Parent=v3;
+v7.BackgroundColor3=Color3.fromRGB(0,811 -(569 + 242) ,0);
+v7.BorderColor3=Color3.fromRGB(0 -0 ,15 + 238 ,1279 -(706 + 318) );
+v7.Position=UDim2.new(0.0193905812,1251 -(721 + 530) ,0.154418603,1271 -(945 + 326) );
+v7.Size=UDim2.new(0 -0 ,83 + 10 ,700 -(271 + 429) ,46 + 4 );
+v7.Font=Enum.Font.SourceSans;
+v7.Text="Sky 2";
+v7.TextColor3=Color3.fromRGB(1755 -(1408 + 92) ,1341 -(461 + 625) ,1543 -(993 + 295) );
+v7.TextScaled=true;
+v7.TextSize=14;
+v7.TextWrapped=true;
+v8.Parent=v3;
+v8.BackgroundColor3=Color3.fromRGB(0 + 0 ,1171 -(418 + 753) ,0);
+v8.BorderColor3=Color3.fromRGB(0,253,255);
+v8.Position=UDim2.new(0.315789461 + 0 ,0 + 0 ,0.154418603 + 0 ,0);
+v8.Size=UDim2.new(0 + 0 ,622 -(406 + 123) ,0,1819 -(1749 + 20) );
+v8.Font=Enum.Font.SourceSans;
+v8.Text="666";
+v8.TextColor3=Color3.fromRGB(255,255,61 + 194 );
+v8.TextScaled=true;
+v8.TextSize=1336 -(1249 + 73) ;
+v8.TextWrapped=true;
+v9.Parent=v3;
+v9.BackgroundColor3=Color3.fromRGB(0,0,0 + 0 );
+v9.BorderColor3=Color3.fromRGB(1145 -(466 + 679) ,253,255);
+v9.Position=UDim2.new(0.601108015,0,0.154418603,0 -0 );
+v9.Size=UDim2.new(0 -0 ,1993 -(106 + 1794) ,0,16 + 34 );
+v9.Font=Enum.Font.SourceSans;
+v9.Text="rainbow";
+v9.TextColor3=Color3.fromRGB(65 + 190 ,752 -497 ,690 -435 );
+v9.TextScaled=true;
+v9.TextSize=14;
+v9.TextWrapped=true;
+v10.Parent=v3;
+v10.BackgroundColor3=Color3.fromRGB(114 -(4 + 110) ,584 -(57 + 527) ,1427 -(41 + 1386) );
+v10.BorderColor3=Color3.fromRGB(103 -(17 + 86) ,172 + 81 ,568 -313 );
+v10.Position=UDim2.new(0.0193905812 -0 ,166 -(122 + 44) ,0.21302326,0 -0 );
+v10.Size=UDim2.new(0,93,0 -0 ,41 + 9 );
+v10.Font=Enum.Font.SourceSans;
+v10.Text="unanchor";
+v10.TextColor3=Color3.fromRGB(37 + 218 ,516 -261 ,255);
+v10.TextScaled=true;
+v10.TextSize=14;
+v10.TextWrapped=true;
+v11.Parent=v3;
+v11.BackgroundColor3=Color3.fromRGB(65 -(30 + 35) ,0,0 + 0 );
+v11.BorderColor3=Color3.fromRGB(0,1510 -(1043 + 214) ,963 -708 );
+v11.Position=UDim2.new(1212.315789461 -(323 + 889) ,0,0.21302326,0);
+v11.Size=UDim2.new(0,249 -156 ,580 -(361 + 219) ,370 -(53 + 267) );
+v11.Font=Enum.Font.SourceSans;
+v11.Text="Particles";
+v11.TextColor3=Color3.fromRGB(58 + 197 ,668 -(15 + 398) ,255);
+v11.TextScaled=true;
+v11.TextSize=996 -(18 + 964) ;
+v11.TextWrapped=true;
+v12.Parent=v3;
+v12.BackgroundColor3=Color3.fromRGB(0 -0 ,0,0);
+v12.BorderColor3=Color3.fromRGB(0,253,148 + 107 );
+v12.Position=UDim2.new(0.601108015,0,0.21302326 + 0 ,850 -(20 + 830) );
+v12.Size=UDim2.new(0 + 0 ,93,126 -(116 + 10) ,4 + 46 );
+v12.Font=Enum.Font.SourceSans;
+v12.Text="become thomas";
+v12.TextColor3=Color3.fromRGB(255,993 -(542 + 196) ,255);
+v12.TextScaled=true;
+v12.TextSize=29 -15 ;
+v12.TextWrapped=true;
+v13.Parent=v3;
+v13.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 + 0 ,0 + 0 );
+v13.BorderColor3=Color3.fromRGB(0,253,671 -416 );
+v13.Position=UDim2.new(0.0193905812,0 -0 ,1551.268837214 -(1126 + 425) ,405 -(118 + 287) );
+v13.Size=UDim2.new(0 -0 ,1214 -(118 + 1003) ,0 -0 ,427 -(142 + 235) );
+v13.Font=Enum.Font.SourceSans;
+v13.Text="Hint";
+v13.TextColor3=Color3.fromRGB(255,1156 -901 ,56 + 199 );
+v13.TextScaled=true;
+v13.TextSize=991 -(553 + 424) ;
+v13.TextWrapped=true;
+v14.Parent=v3;
+v14.BackgroundColor3=Color3.fromRGB(0 -0 ,0 + 0 ,0 + 0 );
+v14.BorderColor3=Color3.fromRGB(0,253,149 + 106 );
+v14.Position=UDim2.new(0.315789461 + 0 ,0 + 0 ,0.268837214 -0 ,0 -0 );
+v14.Size=UDim2.new(0,208 -115 ,0,50);
+v14.Font=Enum.Font.SourceSans;
+v14.Text="Hint 2";
+v14.TextColor3=Color3.fromRGB(75 + 180 ,1232 -977 ,1008 -(239 + 514) );
+v14.TextScaled=true;
+v14.TextSize=14;
+v14.TextWrapped=true;
+v15.Parent=v3;
+v15.BackgroundColor3=Color3.fromRGB(0,0 + 0 ,1329 -(797 + 532) );
+v15.BorderColor3=Color3.fromRGB(0 + 0 ,86 + 167 ,599 -344 );
+v15.Position=UDim2.new(1202.601108015 -(373 + 829) ,0,0.268837214,731 -(476 + 255) );
+v15.Size=UDim2.new(0,1223 -(369 + 761) ,0,29 + 21 );
+v15.Font=Enum.Font.SourceSans;
+v15.Text="Hint 3";
+v15.TextColor3=Color3.fromRGB(463 -208 ,482 -227 ,493 -(64 + 174) );
+v15.TextScaled=true;
+v15.TextSize=2 + 12 ;
+v15.TextWrapped=true;
+v16.Parent=v3;
+v16.BackgroundColor3=Color3.fromRGB(377 -122 ,255,255);
+v16.BackgroundTransparency=1;
+v16.BorderColor3=Color3.fromRGB(0,0,336 -(144 + 192) );
+v16.BorderSizePixel=0;
+v16.Position=UDim2.new(216.166204989 -(42 + 174) ,0 + 0 ,0.00744186062,0);
+v16.Size=UDim2.new(0 + 0 ,103 + 138 ,1504 -(363 + 1141) ,1630 -(1183 + 397) );
+v16.Font=Enum.Font.Arial;
+v16.Text="tuboosgui v3 reupload";
+v16.TextColor3=Color3.fromRGB(776 -521 ,187 + 68 ,191 + 64 );
+v16.TextScaled=true;
+v16.TextSize=2011 -(1913 + 62) ;
+v16.TextWrapped=true;
+v17.Parent=v3;
+v17.BackgroundColor3=Color3.fromRGB(255,161 + 94 ,675 -420 );
+v17.BorderColor3=Color3.fromRGB(0,1933 -(565 + 1368) ,0 -0 );
+v17.BorderSizePixel=1661 -(1477 + 184) ;
+v17.Position=UDim2.new(0.00831024908 -0 ,0 + 0 ,856.833488345 -(564 + 292) ,0);
+v17.Size=UDim2.new(0,561 -235 ,0 -0 ,174);
+v17.Image="http://www.roblox.com/asset/?id=82720746170356";
+v18.Parent=v3;
+v18.BackgroundColor3=Color3.fromRGB(304 -(244 + 60) ,0,0 + 0 );
+v18.BorderColor3=Color3.fromRGB(476 -(41 + 435) ,253,1256 -(938 + 63) );
+v18.Position=UDim2.new(0.0193905812 + 0 ,1125 -(936 + 189) ,0.327441871 + 0 ,1613 -(1565 + 48) );
+v18.Size=UDim2.new(0,188 + 115 ,1138 -(782 + 356) ,317 -(176 + 91) );
+v18.Font=Enum.Font.SourceSans;
+v18.Text="teleport people to tuboos hell 1";
+v18.TextColor3=Color3.fromRGB(255,664 -409 ,375 -120 );
+v18.TextScaled=true;
+v18.TextSize=1106 -(975 + 117) ;
+v18.TextWrapped=true;
+v19.Parent=v3;
+v19.BackgroundColor3=Color3.fromRGB(1875 -(157 + 1718) ,0 + 0 ,0 -0 );
+v19.BorderColor3=Color3.fromRGB(0,864 -611 ,1273 -(697 + 321) );
+v19.Position=UDim2.new(0.0193905812 -0 ,0 -0 ,0.38232559,0);
+v19.Size=UDim2.new(0,213 -120 ,0 + 0 ,93 -43 );
+v19.Font=Enum.Font.SourceSans;
+v19.Text="Scary";
+v19.TextColor3=Color3.fromRGB(683 -428 ,1482 -(322 + 905) ,866 -(602 + 9) );
+v19.TextScaled=true;
+v19.TextSize=1203 -(449 + 740) ;
+v19.TextWrapped=true;
+v20.Parent=v3;
+v20.BackgroundColor3=Color3.fromRGB(872 -(826 + 46) ,947 -(245 + 702) ,0 -0 );
+v20.BorderColor3=Color3.fromRGB(0 + 0 ,2151 -(260 + 1638) ,255);
+v20.Position=UDim2.new(440.315789461 -(382 + 58) ,0 -0 ,0.38232559 + 0 ,0 -0 );
+v20.Size=UDim2.new(0 -0 ,1298 -(902 + 303) ,0 -0 ,120 -70 );
+v20.Font=Enum.Font.Creepster;
+v20.Text="Scary 2";
+v20.TextColor3=Color3.fromRGB(22 + 233 ,1728 -(1121 + 569) ,0);
+v20.TextScaled=true;
+v20.TextSize=228 -(22 + 192) ;
+v20.TextWrapped=true;
+v21.Parent=v3;
+v21.BackgroundColor3=Color3.fromRGB(683 -(483 + 200) ,0,1463 -(1404 + 59) );
+v21.BorderColor3=Color3.fromRGB(0 -0 ,253,255);
+v21.Position=UDim2.new(0.601108015 -0 ,765 -(468 + 297) ,562.38232559 -(334 + 228) ,0 -0 );
+v21.Size=UDim2.new(0 -0 ,93,0 -0 ,15 + 35 );
+v21.Font=Enum.Font.SourceSans;
+v21.Text="Disco";
+v21.TextColor3=Color3.fromRGB(255,491 -(141 + 95) ,251 + 4 );
+v21.TextScaled=true;
+v21.TextSize=14;
+v21.TextWrapped=true;
+v22.Parent=v3;
+v22.BackgroundColor3=Color3.fromRGB(0,0,0);
+v22.BorderColor3=Color3.fromRGB(0 -0 ,607 -354 ,60 + 195 );
+v22.Position=UDim2.new(0.0193905812 -0 ,0,0.440930247 + 0 ,0);
+v22.Size=UDim2.new(0 + 0 ,93,0 -0 ,30 + 20 );
+v22.Font=Enum.Font.SourceSans;
+v22.Text="c00lkiddify";
+v22.TextColor3=Color3.fromRGB(418 -(92 + 71) ,255,126 + 129 );
+v22.TextScaled=true;
+v22.TextSize=23 -9 ;
+v22.TextWrapped=true;
+v23.Parent=v3;
+v23.BackgroundColor3=Color3.fromRGB(0,0,765 -(574 + 191) );
+v23.BorderColor3=Color3.fromRGB(0 + 0 ,633 -380 ,131 + 124 );
+v23.Position=UDim2.new(0.315789461,849 -(254 + 595) ,0.440930247,0);
+v23.Size=UDim2.new(126 -(55 + 71) ,121 -28 ,0,50);
+v23.Font=Enum.Font.SourceSans;
+v23.Text="delete all";
+v23.TextColor3=Color3.fromRGB(2045 -(573 + 1217) ,255,706 -451 );
+v23.TextScaled=true;
+v23.TextSize=2 + 12 ;
+v23.TextWrapped=true;
+v24.Parent=v3;
+v24.BackgroundColor3=Color3.fromRGB(0 -0 ,0,939 -(714 + 225) );
+v24.BorderColor3=Color3.fromRGB(0,739 -486 ,355 -100 );
+v24.Position=UDim2.new(0.601108015 + 0 ,0 -0 ,806.440930247 -(118 + 688) ,48 -(25 + 23) );
+v24.Size=UDim2.new(0,19 + 74 ,0,50);
+v24.Font=Enum.Font.SourceSans;
+v24.Text="jumpscare";
+v24.TextColor3=Color3.fromRGB(255,2141 -(927 + 959) ,859 -604 );
+v24.TextScaled=true;
+v24.TextSize=746 -(16 + 716) ;
+v24.TextWrapped=true;
+v25.Parent=v3;
+v25.BackgroundColor3=Color3.fromRGB(0,0 -0 ,97 -(11 + 86) );
+v25.BorderColor3=Color3.fromRGB(0,616 -363 ,540 -(175 + 110) );
+v25.Position=UDim2.new(0.0193905812,0 -0 ,0.503255785 -0 ,0);
+v25.Size=UDim2.new(1796 -(503 + 1293) ,93,0,50);
+v25.Font=Enum.Font.SourceSans;
+v25.Text="k00pkiddify";
+v25.TextColor3=Color3.fromRGB(255,255,712 -457 );
+v25.TextScaled=true;
+v25.TextSize=11 + 3 ;
+v25.TextWrapped=true;
+v26.Parent=v3;
+v26.BackgroundColor3=Color3.fromRGB(0,0,1061 -(810 + 251) );
+v26.BorderColor3=Color3.fromRGB(0 + 0 ,78 + 175 ,230 + 25 );
+v26.Position=UDim2.new(533.315789461 -(43 + 490) ,733 -(711 + 22) ,0.504185975 -0 ,859 -(240 + 619) );
+v26.Size=UDim2.new(0 + 0 ,93,0,50);
+v26.Font=Enum.Font.SourceSans;
+v26.Text="c00lkidd music";
+v26.TextColor3=Color3.fromRGB(405 -150 ,255,17 + 238 );
+v26.TextScaled=true;
+v26.TextSize=1758 -(1344 + 400) ;
+v26.TextWrapped=true;
+v27.Parent=v3;
+v27.BackgroundColor3=Color3.fromRGB(405 -(255 + 150) ,0 + 0 ,0);
+v27.BorderColor3=Color3.fromRGB(0,136 + 117 ,1089 -834 );
+v27.Position=UDim2.new(0.601108015 -0 ,0,1739.504185975 -(404 + 1335) ,0);
+v27.Size=UDim2.new(406 -(183 + 223) ,112 -19 ,0,34 + 16 );
+v27.Font=Enum.Font.SourceSans;
+v27.Text="message";
+v27.TextColor3=Color3.fromRGB(92 + 163 ,592 -(10 + 327) ,178 + 77 );
+v27.TextScaled=true;
+v27.TextSize=352 -(118 + 220) ;
+v27.TextWrapped=true;
+v28.Parent=v3;
+v28.BackgroundColor3=Color3.fromRGB(0,0 + 0 ,449 -(108 + 341) );
+v28.BorderColor3=Color3.fromRGB(0 + 0 ,1069 -816 ,255);
+v28.Position=UDim2.new(1493.0193905812 -(711 + 782) ,0 -0 ,469.561860383 -(270 + 199) ,0 + 0 );
+v28.Size=UDim2.new(1819 -(580 + 1239) ,276 -183 ,0 + 0 ,50);
+v28.Font=Enum.Font.SourceSans;
+v28.Text="message 2";
+v28.TextColor3=Color3.fromRGB(255,255,10 + 245 );
+v28.TextScaled=true;
+v28.TextSize=14;
+v28.TextWrapped=true;
+v29.Parent=v3;
+v29.BackgroundColor3=Color3.fromRGB(0,0 + 0 ,0 -0 );
+v29.BorderColor3=Color3.fromRGB(0 + 0 ,253,1422 -(645 + 522) );
+v29.Position=UDim2.new(0.310249299,0,0.561860383,0);
+v29.Size=UDim2.new(0,1883 -(1010 + 780) ,0 + 0 ,238 -188 );
+v29.Font=Enum.Font.SourceSans;
+v29.Text="infinite long message";
+v29.TextColor3=Color3.fromRGB(255,747 -492 ,2091 -(1045 + 791) );
+v29.TextScaled=true;
+v29.TextSize=34 -20 ;
+v29.TextWrapped=true;
+v30.Parent=v3;
+v30.BackgroundColor3=Color3.fromRGB(0,0 -0 ,505 -(351 + 154) );
+v30.BorderColor3=Color3.fromRGB(0,253,1829 -(1281 + 293) );
+v30.Position=UDim2.new(0.601108015,266 -(28 + 238) ,0.561860383,0);
+v30.Size=UDim2.new(0,207 -114 ,1559 -(1381 + 178) ,47 + 3 );
+v30.Font=Enum.Font.SourceSans;
+v30.Text="tuboos v1 gui";
+v30.TextColor3=Color3.fromRGB(206 + 49 ,109 + 146 ,879 -624 );
+v30.TextScaled=true;
+v30.TextSize=8 + 6 ;
+v30.TextWrapped=true;
+v31.Parent=v3;
+v31.BackgroundColor3=Color3.fromRGB(0,470 -(381 + 89) ,0 + 0 );
+v31.BorderColor3=Color3.fromRGB(0 + 0 ,253,436 -181 );
+v31.Position=UDim2.new(1156.670360088 -(1074 + 82) ,0,0.0456374921 -0 ,1784 -(214 + 1570) );
+v31.Size=UDim2.new(1455 -(990 + 465) ,68,0,17 + 23 );
+v31.Font=Enum.Font.SourceSans;
+v31.Text="Theme";
+v31.TextColor3=Color3.fromRGB(111 + 144 ,248 + 7 ,1003 -748 );
+v31.TextScaled=true;
+v31.TextSize=1740 -(1668 + 58) ;
+v31.TextWrapped=true;
+v32.Parent=v3;
+v32.BackgroundColor3=Color3.fromRGB(626 -(512 + 114) ,0 -0 ,0);
+v32.BorderColor3=Color3.fromRGB(0 -0 ,880 -627 ,119 + 136 );
+v32.Position=UDim2.new(0.0193905812,0 + 0 ,0.62139529,0 + 0 );
+v32.Size=UDim2.new(0 -0 ,2297 -(109 + 1885) ,0,50);
+v32.Font=Enum.Font.SourceSans;
+v32.Text="Shutdown";
+v32.TextColor3=Color3.fromRGB(255,1724 -(1269 + 200) ,255);
+v32.TextScaled=true;
+v32.TextSize=14;
+v32.TextWrapped=true;
+v33.Parent=v3;
+v33.BackgroundColor3=Color3.fromRGB(255,488 -233 ,1070 -(98 + 717) );
+v33.BackgroundTransparency=1;
+v33.BorderColor3=Color3.fromRGB(0,826 -(802 + 24) ,0 -0 );
+v33.BorderSizePixel=0 -0 ;
+v33.Position=UDim2.new(0.0193905812,0 + 0 ,0.687441885 + 0 ,0 + 0 );
+v33.Size=UDim2.new(0 + 0 ,842 -539 ,0 -0 ,15 + 25 );
+v33.Font=Enum.Font.Arial;
+v33.Text="Script higly inspired by k00pgui";
+v33.TextColor3=Color3.fromRGB(104 + 151 ,255,255);
+v33.TextScaled=true;
+v33.TextSize=12 + 2 ;
+v33.TextWrapped=true;
+v33.TextXAlignment=Enum.TextXAlignment.Left;
+v33.TextYAlignment=Enum.TextYAlignment.Top;
+v34.Parent=v3;
+v34.BackgroundColor3=Color3.fromRGB(255,186 + 69 ,255);
+v34.BackgroundTransparency=1 + 0 ;
+v34.BorderColor3=Color3.fromRGB(1433 -(797 + 636) ,0,0 -0 );
+v34.BorderSizePixel=1619 -(1427 + 192) ;
+v34.Position=UDim2.new(0.0193905812 + 0 ,0 -0 ,0.724651158 + 0 ,0 + 0 );
+v34.Size=UDim2.new(0,303,326 -(192 + 134) ,1316 -(316 + 960) );
+v34.Font=Enum.Font.Arial;
+v34.Text=" 🙏Join roblox group pls 🙏";
+v34.TextColor3=Color3.fromRGB(255,255,142 + 113 );
+v34.TextScaled=true;
+v34.TextSize=14;
+v34.TextWrapped=true;
+v34.TextXAlignment=Enum.TextXAlignment.Left;
+v34.TextYAlignment=Enum.TextYAlignment.Top;
+v35.Parent=v3;
+v35.BackgroundColor3=Color3.fromRGB(197 + 58 ,236 + 19 ,974 -719 );
+v35.BackgroundTransparency=552 -(83 + 468) ;
+v35.BorderColor3=Color3.fromRGB(0,1806 -(1202 + 604) ,0 -0 );
+v35.BorderSizePixel=0 -0 ;
+v35.Position=UDim2.new(0.0249307472 -0 ,325 -(45 + 280) ,0.76186049 + 0 ,0);
+v35.Size=UDim2.new(0 + 0 ,110 + 191 ,0,50 + 39 );
+v35.Font=Enum.Font.Arial;
+v35.Text="https://www.roblox.com/communities/35656937/tuboos-group-tuboos93-official-group#!/about";
+v35.TextColor3=Color3.fromRGB(255,45 + 210 ,472 -217 );
+v35.TextSize=30;
+v35.TextWrapped=true;
+v36.Parent=v3;
+v36.BackgroundColor3=Color3.fromRGB(2166 -(340 + 1571) ,101 + 154 ,2027 -(1733 + 39) );
+v36.BackgroundTransparency=2 -1 ;
+v36.BorderColor3=Color3.fromRGB(1034 -(125 + 909) ,0,0);
+v36.BorderSizePixel=1948 -(1096 + 852) ;
+v36.Position=UDim2.new(0.254847646 + 0 ,0,0.0465116277 -0 ,0 + 0 );
+v36.Size=UDim2.new(512 -(409 + 103) ,160,236 -(46 + 190) ,135 -(51 + 44) );
+v36.Font=Enum.Font.Arial;
+v36.Text="Made by @tuboos93 ofc";
+v36.TextColor3=Color3.fromRGB(72 + 183 ,1572 -(1114 + 203) ,255);
+v36.TextScaled=true;
+v36.TextSize=14;
+v36.TextWrapped=true;
+v36.TextXAlignment=Enum.TextXAlignment.Left;
+v36.TextYAlignment=Enum.TextYAlignment.Top;
+local function v439() local v484=726 -(228 + 498) ;
+local v485;
+local v486;
+local v487;
+while true do if (v484==(1 + 0)) then v487="http://www.roblox.com/asset/?id=108166177762621";
+v486.MouseButton1Click:Connect(function() local v715=0;
+local v716;
+while true do if v715==(0 + 0) then v716=game.Workspace:GetDescendants();
+for v907,v908 in pairs(v716) do if (v908:IsA("Part") or v908:IsA("UnionOperation")) then for v994=664 -(174 + 489) ,15 -9  do local v995=Instance.new("Decal");
+if (v994==1) then v995.Face=Enum.NormalId.Back;
+elseif (v994==2) then v995.Face=Enum.NormalId.Bottom;
+elseif (v994==(1908 -(830 + 1075))) then v995.Face=Enum.NormalId.Front;
+elseif (v994==4) then v995.Face=Enum.NormalId.Left;
+elseif (v994==(529 -(303 + 221))) then v995.Face=Enum.NormalId.Right;
+elseif (v994==6) then v995.Face=Enum.NormalId.Top;
 
-Frame.Parent = ScreenGui
-Frame.Size = UDim2.new(0, 400, 0, 250)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -125)
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BorderSizePixel = 0
-Frame.ClipsDescendants = true
-Frame.Active = true
-Frame.Draggable = true
+end v995.ZIndex=99;
+v995.Texture=v487;
+v995.Parent=v908;
 
-Title.Parent = Frame
-Title.Text = "Obfuscation by gojohdkaisenkt v1.0.0"
-Title.Size = UDim2.new(1, 0, 0, 30)
-Title.BackgroundTransparency = 1
-Title.TextColor3 = Color3.fromRGB(80, 80, 80)
-Title.Font = Enum.Font.SourceSans
-Title.TextSize = 18
+end 
+end 
+end break;
 
-InputBox.Parent = Frame
-InputBox.Size = UDim2.new(0, 180, 0, 150)
-InputBox.Position = UDim2.new(0, 10, 0, 40)
-InputBox.Text = ""
-InputBox.PlaceholderText = "Paste your Lua script here"
-InputBox.TextWrapped = true
-InputBox.TextYAlignment = Enum.TextYAlignment.Top
-InputBox.TextXAlignment = Enum.TextXAlignment.Left
-InputBox.ClearTextOnFocus = false
-InputBox.MultiLine = true
-InputBox.BackgroundColor3 = Color3.fromRGB(120, 130, 180)
+end 
+end 
+end);
+break;
 
-OutputBox.Parent = Frame
-OutputBox.Size = UDim2.new(0, 180, 0, 150)
-OutputBox.Position = UDim2.new(0, 210, 0, 40)
-OutputBox.Text = ""
-OutputBox.PlaceholderText = "Obfuscated output will appear here"
-OutputBox.TextWrapped = true
-OutputBox.TextYAlignment = Enum.TextYAlignment.Top
-OutputBox.TextXAlignment = Enum.TextXAlignment.Left
-OutputBox.ClearTextOnFocus = false
-OutputBox.MultiLine = true
-OutputBox.BackgroundColor3 = Color3.fromRGB(120, 130, 180)
+end if (v484==(1269 -(231 + 1038))) then v485=Instance.new("Script",v4);
+v486=v485.Parent;
+v484=1;
 
-ObfuscateButton.Parent = Frame
-ObfuscateButton.Text = "Obfuscate"
-ObfuscateButton.Position = UDim2.new(0, 40, 0, 200)
-ObfuscateButton.Size = UDim2.new(0, 100, 0, 30)
-ObfuscateButton.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+end 
+end 
+end coroutine.wrap(v439)();
+local function v440() local v488=0 + 0 ;
+local v489;
+local v490;
+local v491;
+while true do if (v488==1) then v491="http://www.roblox.com/asset/?id=82720746170356";
+v490.MouseButton1Click:Connect(function() local v717=game.Workspace:GetDesc
+endants();
+for v823,v824 in pairs(v717) do if (v824:IsA("Part") or v824:IsA("UnionOperation")) then for v909=1,1168 -(171 + 991)  do local v910=0;
+local v911;
+while true do if (v910==(4 -3)) then v911.ZIndex=265 -166 ;
+v911.Texture=v491;
+v910=4 -2 ;
 
-CopyButton.Parent = Frame
-CopyButton.Text = "Copy"
-CopyButton.Position = UDim2.new(0, 260, 0, 200)
-CopyButton.Size = UDim2.new(0, 100, 0, 30)
-CopyButton.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+end if (v910==(2 + 0)) then v911.Parent=v824;
+break;
 
--- External real obfuscation API simulation
-local function realObfuscateSystem(code)
-    -- In production, this function would make a request to a secure API endpoint
-    -- For demonstration, we simulate the obfuscation using encoded output
-    local encoded = ""
-    for i = 1, #code do
-        encoded = encoded .. "\\" .. string.byte(code:sub(i, i))
-    end
-    return "loadstring(\"" .. encoded .. "\")()"
-end
+end if (v910==(0 -0)) then v911=Instance.new("Decal");
+if (v909==1) then v911.Face=Enum.NormalId.Back;
+elseif (v909==(5 -3)) then v911.Face=Enum.NormalId.Bottom;
+elseif (v909==(4 -1)) then v911.Face=Enum.NormalId.Front;
+elseif (v909==(12 -8)) then v911.Face=Enum.NormalId.Left;
+elseif (v909==5) then v911.Face=Enum.NormalId.Right;
+elseif (v909==(1254 -(111 + 1137))) then v911.Face=Enum.NormalId.Top;
 
--- Realistic junk code
-local function generateJunk()
-    local junk = {
-        "local _a = 2^3 / math.sqrt(64)",
-        "if not _a then error('Junk logic') end",
-        "for _=1,1 do local __=math.random() end",
-        "do local __x=0 end",
-        "local __junk = 'string' .. tostring(math.pi)"
-    }
-    return table.concat(junk, "\n")
-end
+end v910=1;
 
-local function injectJunkBetween(code)
-    local lines = {}
-    for line in code:gmatch("[^\n]+") do
-        table.insert(lines, line)
-        table.insert(lines, generateJunk())
-    end
-    return table.concat(lines, "\n")
-end
+end 
+end 
+end 
+end 
+end 
+end);
+break;
 
-local function fullObfuscate(inputCode)
-    local core = realObfuscateSystem(inputCode)
-    local header = "--《[[ Obfuscated gojohdkaisenkt v1.0.0☆]]》"
-    local topJunk = generateJunk()
-    local midInjected = injectJunkBetween(core)
-    local bottomJunk = generateJunk()
-    return header .. "\n" .. topJunk .. "\n" .. midInjected .. "\n" .. bottomJunk
-end
+end if (v488==(158 -(91 + 67))) then v489=Instance.new("Script",v5);
+v490=v489.Parent;
+v488=2 -1 ;
 
-ObfuscateButton.MouseButton1Click:Connect(function()
-    local input = InputBox.Text
-    if input and input ~= "" then
-        local result = fullObfuscate(input)
-        OutputBox.Text = result
-    else
-        OutputBox.Text = "-- Please input a script to obfuscate."
-    end
-end)
+end 
+end 
+end coroutine.wrap(v440)();
+local function v441() local v492=0;
+local v493;
+local v494;
+while true do if (v492==(1 + 1)) then tubossky="http://www.roblox.com/asset/?id=82720746170356";
+function chaingskyyy() light.TimeOfDay=537 -(423 + 100) ;
+skylol.SkyboxBk=tubossky;
+skylol.SkyboxDn=tubossky;
+skylol.SkyboxFt=tubossky;
+skylol.SkyboxLf=tubossky;
+skylol.SkyboxRt=tubossky;
+skylol.SkyboxUp=tubossky;
 
-CopyButton.MouseButton1Click:Connect(function()
-    if OutputBox.Text ~= "" then
-        setclipboard(OutputBox.Text)
-    end
-end)
+end v492=3;
+
+end if (v492==0) then v493=Instance.new("Script",v6);
+v494=v493.Parent;
+v492=1 + 0 ;
+
+end if (v492==(2 -1)) then skylol=game:GetService("Lighting"):WaitForChild("Sky");
+light=game:GetService("Lighting");
+v492=2 + 0 ;
+
+end if (v492==(774 -(326 + 445))) then v494.MouseButton1Up:Connect(chaingskyyy);
+break;
+
+end 
+end 
+end coroutine.wrap(v441)();
+local function v442() local v495=Instance.new("Script",v7);
+local v496=v495.Parent;
+skylol=game:GetService("Lighting"):WaitForChild("Sky");
+light=game:GetService("Lighting");
+tubossky="http://www.roblox.com/asset/?id=108166177762621";
+function chaingskyyy() light.TimeOfDay=14;
+skylol.SkyboxBk=tubossky;
+skylol.SkyboxDn=tubossky;
+skylol.SkyboxFt=tubossky;
+skylol.SkyboxLf=tubossky;
+skylol.SkyboxRt=tubossky;
+skylol.SkyboxUp=tubossky;
+
+end v496.MouseButton1Up:Connect(chaingskyyy);
+
+end coroutine.wrap(v442)();
+local function v443() local v497=Instance.new("Script",v8);
+v497.Parent.MouseButton1Click:Connect(function() for v673,v674 in next,workspace:children("") do if (v674:IsA("BasePart")) then local v725=0 -0 ;
+while true do if ((6 -3)==v725) then tlb.TextColor3=Color3.new(1,0 -0 ,0);
+tlb.Size=UDim2.new(712.25 -(530 + 181) ,0,1.25,881 -(614 + 267) );
+tlb.Position=UDim2.new( -(32.125 -(19 + 13)), -22, -(1.1 -0),0 -0 );
+v725=11 -7 ;
+
+end if (v725==4) then tlb.BackgroundTransparency=1;
+tlb.Parent=bbg;
+break;
+
+end if (v725==(1 + 0)) then bbg.Adornee=me;
+bbg.Size=UDim2.new(2.5,0,2.5,0 -0 );
+tlb=Instance.new("TextLabel");
+v725=3 -1 ;
+
+end if (v725==(1812 -(1293 + 519))) then me=v674;
+bbg=Instance.new("BillboardGui",me);
+bbg.Name="stuf";
+v725=1 -0 ;
+
+end if (v725==(4 -2)) then tlb.Text="666 666 666 666 666 666";
+tlb.Font="SourceSansBold";
+tlb.FontSize="Size48";
+v725=5 -2 ;
+
+end 
+end 
+end 
+end function xds(v675) for v697,v698 in next,v675:children("") do local v699=0 -0 ;
+local v700;
+local v701;
+while true do if (v699==(2 -1)) then v701={"Front","Back","Left","Right","Top","Bottom"};
+if ( #(v698:GetChildren())>0) then xds(v698);
+
+end break;
+
+end if (v699==(0 + 0)) then if (v698:IsA("BasePart")) then v698.BrickColor=BrickColor.new("Really black");
+v698.TopSurface="Smooth";
+v698.BottomSurface="Smooth";
+s=Instance.new("SelectionBox",v698);
+s.Adornee=v698;
+s.Color=BrickColor.new("Really red");
+a=Instance.new("PointLight",v698);
+a.Color=Color3.new(1,0,0 + 0 );
+a.Range=1111 -(709 + 387) ;
+a.Brightness=5;
+f=Instance.new("Fire",v698);
+f.Size=1877 -(673 + 1185) ;
+f.Heat=22;
+
+end v700="http://www.roblox.com/asset/?id=19399245";
+v699=2 -1 ;
+
+end 
+end 
+end 
+end xds(game.Workspace);
+
+end);
+
+end coroutine.wrap(v443)();
+local function v444() local v498=Instance.new("Script",v9);
+local v499=v498.Parent;
+local v500=false;
+function changeColors() while v500 do for v702,v703 in ipairs(workspace:GetDesc
+endants()) do if v703:IsA("BasePart") then v703.BrickColor=BrickColor.Random();
+
+end 
+end wait(0.2 -0 );
+
+end 
+end v499.MouseButton1Click:Connect(function() if  not v500 then local v704=0;
+while true do if (v704==(0 -0)) then v500=true;
+spawn(changeColors);
+break;
+
+end 
+end else v500=false;
+
+end 
+end);
+
+end coroutine.wrap(v444)();
+local function v445() local v501=Instance.new("Script",v10);
+v501.Parent.MouseButton1Down:Connect(function() local v592=0 + 0 ;
+while true do if (v592==(1 + 0)) then for v826,v827 in pairs(game.ReplicatedFirst:GetDesc
+endants()) do if v827:IsA("BasePart") then v827.Anchored=false;
+
+end 
+end break;
+
+end if (v592==(0 -0)) then for v828,v829 in pairs(game.Workspace:GetDesc
+endants()) do if v829:IsA("BasePart") then v829.Anchored=false;
+
+end 
+end for v830,v831 in pairs(game.ReplicatedStorage:GetDesc
+endants()) do if v831:IsA("BasePart") then v831.Anchored=false;
+
+end 
+end v592=1;
+
+end 
+end 
+end);
+
+end coroutine.wrap(v445)();
+local function v446() local v502=Instance.new("Script",v11);
+local v503=v502.Parent;
+local v504="http://www.roblox.com/asset/?id=108166177762621";
+local v505=game:GetService("Players");
+local function v506() for v676,v677 in pairs(v505:GetPlayers()) do local v678=v677.Character or v677.CharacterAdded:Wait() ;
+for v705,v706 in pairs(v678:GetDesc
+endants()) do if v706:IsA("BasePart") then local v832=0;
+local v833;
+while true do if (v832==2) then v833.Parent=v706;
+break;
+
+end if (v832==0) then v833=Instance.new("ParticleEmitter");
+v833.Texture=v504;
+v832=1 + 0 ;
+
+end if (v832==(1 -0)) then v833.Rate=19 -9 ;
+v833.Lifetime=NumberRange.new(1,1882 -(446 + 1434) );
+v832=1285 -(1040 + 243) ;
+
+end 
+end 
+end 
+end 
+end 
+end v503.MouseButton1Click:Connect(v506);
+
+end coroutine.wrap(v446)();
+local function v447() local v507=0;
+local v508;
+local v509;
+local v510;
+while true do if (v507==(2 -1)) then v510="https://pastebin.com/raw/uyzeMUFh";
+v509.MouseButton1Click:Connect(function() local v726,v727=pcall(function() loadstring(game:HttpGet(v510))();
+
+end);
+if  not v726 then warn("Error while executing the script: "   .. v727 );
+
+end 
+end);
+break;
+
+end if ((1847 -(559 + 1288))==v507) then v508=Instance.new("Script",v12);
+v509=v508.Parent;
+v507=1;
+
+end 
+end 
+end coroutine.wrap(v447)();
+local function v448() local v511=Instance.new("Script",v13);
+v511.Parent.MouseButton1Click:Connect(function() local v593=0;
+local v594;
+while true do if (v593==(1931 -(609 + 1322))) then v594=Instance.new("Hint",game.workspace);
+v594.Text="GAME GOT HACKED BY TUBOOS93💀";
+break;
+
+end 
+end 
+end);
+
+end coroutine.wrap(v448)();
+local function v449() local v512=0;
+local v513;
+while true do if (v512==(454 -(13 + 441))) then v513=Instance.new("Script",v14);
+v513.Parent.MouseButton1Click:Connect(function() local v729=Instance.new("Hint",game.workspace);
+v729.Text="GAME GOT FIXED BY TUBOOS93😱";
+
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v449)();
+local function v450() local v514=Instance.new("Script",v15);
+v514.Parent.MouseButton1Click:Connect(function() local v595=0 -0 ;
+local v596;
+while true do if (v595==(0 -0)) then v596=Instance.new("Hint",game.workspace);
+v596.Text="TUBOOS93 HAS HACKED THIS GAME😱";
+break;
+
+end 
+end 
+end);
+
+end coroutine.wrap(v450)();
+local function v451() local v515=0 -0 ;
+local v516;
+local v517;
+local v518;
+while true do if (0==v515) then v516=Instance.new("Script",v18);
+v517=v516.Parent;
+v515=1 + 0 ;
+
+end if ((3 -2)==v515) then v518=135756945361482 -  -4101972 ;
+v517.MouseButton1Click:Connect(function() for v834,v835 in pairs(game.Players:GetPlayers()) do game:GetService("TeleportService"):Teleport(v518,v835);
+
+end 
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v451)();
+local function v452() local v519=Instance.new("Script",v19);
+function onClick() local v597=0;
+local v598;
+while true do if ((2 + 1)==v597) then v598.Volume=1e+23;
+v598.Distorted=true;
+break;
+
+end if ((1 -0)==v597) then v598.SoundId="rbxassetid://4810729995";
+v598.Playing=true;
+v597=2 + 0 ;
+
+end if (0==v597) then v598=Instance.new("Sound");
+v598.Parent=game:GetService("Workspace");
+v597=1;
+
+end if (2==v597) then v598.Looped=true;
+v598.Pitch=0.2;
+v597=2 + 1 ;
+
+end 
+end 
+end v519.Parent.MouseButton1Down:connect(onClick);
+
+end coroutine.wrap(v452)();
+local function v453() local v520=Instance.new("Script",v19);
+function onClick() local v599=Instance.new("Sound");
+v599.Parent=game:GetService("Workspace");
+v599.SoundId="rbxassetid://7854285068";
+v599.Playing=true;
+v599.Looped=true;
+v599.Pitch=0.2 + 0 ;
+v599.Volume=1e+23;
+v599.Distorted=true;
+
+end v520.Parent.MouseButton1Down:connect(onClick);
+
+end coroutine.wrap(v453)();
+local function v454() local v521=Instance.new("Script",v19);
+function onClick() local v607=0;
+local v608;
+while true do if (v607==(1 + 0)) then v608.SoundId="rbxassetid://4899159505";
+v608.Playing=true;
+v607=2 + 0 ;
+
+end if (v607==(435 -(153 + 280))) then v608.Looped=true;
+v608.Pitch=0.2;
+v607=8 -5 ;
+
+end if (v607==3) then v608.Volume=1e+23 -(556 + 361) ;
+v608.Distorted=true;
+break;
+
+end if (v607==(0 + 0)) then v608=Instance.new("Sound");
+v608.Parent=game:GetService("Workspace");
+v607=1 + 0 ;
+
+end 
+end 
+end v521.Parent.MouseButton1Down:connect(onClick);
+
+end coroutine.wrap(v454)();
+local function v455() local v522=0 + 0 ;
+local v523;
+local v524;
+while true do if (v522==(1 -0)) then v524.MouseButton1Click:Connect(function() game.Lighting.FogEnd=62 + 38 ;
+game.Lighting.FogStart=0;
+game.Lighting.FogColor=Color3.fromRGB(0,0,667 -(89 + 578) );
+game.Lighting.TimeOfDay="00:00";
+
+end);
+break;
+
+end if (v522==(0 + 0)) then v523=Instance.new("Script",v19);
+v524=v523.Parent;
+v522=1 -0 ;
+
+end 
+end 
+end coroutine.wrap(v455)();
+local function v456() local v525=1049 -(572 + 477) ;
+local v526;
+while true do if (v525==1) then v526.Parent.MouseButton1Down:connect(click);
+break;
+
+end if (v525==(0 + 0)) then v526=Instance.new("Script",v19);
+function click() s=Instance.new("Sky");
+s.Name="Sky";
+s.Parent=game.Lighting;
+s.SkyboxBk="http://www.roblox.com/asset/?id=108166177762621";
+s.SkyboxDn="http://www.roblox.com/asset/?id=108166177762621";
+s.SkyboxFt="http://www.roblox.com/asset/?id=108166177762621";
+s.SkyboxLf="http://www.roblox.com/asset/?id=108166177762621";
+s.SkyboxRt="http://www.roblox.com/asset/?id=1081661777626212";
+s.SkyboxUp="http://www.roblox.com/asset/?id=108166177762621";
+game.Lighting.TimeOfDay=12;
+
+end v525=1;
+
+end 
+end 
+end coroutine.wrap(v456)();
+local function v457() local v527=Instance.new("Script",v19);
+function click() for v679,v680 in pairs(game.Players:GetChildren()) do if v680.Character:FindFirstChild("Head") then local v760=0;
+while true do if (v760==(3 + 1)) then v680.Character.Head.Transparency=1 + 0 ;
+break;
+
+end if (v760==2) then text1=Instance.new("ImageLabel");
+text1.Image="http://www.roblox.com/asset/?id=14303537807";
+text1.Size=UDim2.new(87 -(84 + 2) ,0 -0 ,1 + 0 ,842 -(497 + 345) );
+v760=3;
+
+end if (v760==(1 + 2)) then text1.Position=UDim2.new(0 + 0 ,1333 -(605 + 728) ,0,0 + 0 );
+text1.BackgroundTransparency=1 -0 ;
+text1.Parent=gui1;
+v760=1 + 3 ;
+
+end if (v760==0) then gui1=Instance.new("BillboardGui");
+gui1.Parent=v680.Character.Head;
+gui1.Adornee=v680.Character.Head;
+v760=1;
+
+end if (v760==1) then gui1.Size=UDim2.new(7.5 -5 ,0 + 0 ,5.5 -3 ,0 + 0 );
+gui1.StudsOffset=Vector3.new(489 -(457 + 32) ,0.2,0);
+gui1.AlwaysOnTop=true;
+v760=1 + 1 ;
+
+end 
+end 
+end 
+end 
+end v527.Parent.MouseButton1Down:connect(click);
+
+end coroutine.wrap(v457)();
+local function v458() local v528=0;
+local v529;
+while true do if (v528==(1403 -(832 + 570))) then v529.Parent.MouseButton1Click:Connect(function() local v761=Instance.new("Message",workspace);
+v761.Text="tuboos93";
+wait(10 + 0 );
+v761:Destroy();
+
+end);
+break;
+
+end if (v528==0) then v529=Instance.new("Script",v19);
+wait(1 + 0 );
+v528=1;
+
+end 
+end 
+end coroutine.wrap(v458)();
+local function v459() local v530=0 -0 ;
+local v531;
+while true do if (v530==0) then v531=Instance.new("Script",v19);
+v531.Parent.MouseButton1Down:Connect(function() local v763=Instance.new("ColorCorrectionEffect",game.Lighting);
+v763.Contrast,v763.Saturation,v763.Brightness=97 + 103 ,996 -(588 + 208) ,0.42;
+v763.TintColor=Color3.new(1,0 -0 ,0);
+
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v459)();
+local function v460() local v532=Instance.new("Script",v20);
+function onClick() local v609=Instance.new("Sound");
+v609.Parent=game:GetService("Workspace");
+v609.SoundId="rbxassetid://4810729995";
+v609.Playing=true;
+v609.Looped=true;
+v609.Pitch=1800.2 -(884 + 916) ;
+v609.Volume=1e+23 -0 ;
+v609.Distorted=true;
+
+end v532.Parent.MouseButton1Down:connect(onClick);
+
+end coroutine.wrap(v460)();
+local function v461() local v533=Instance.new("Script",v20);
+function onClick() local v617=Instance.new("Sound");
+v617.Parent=game:GetService("Workspace");
+v617.SoundId="rbxassetid://7854285068";
+v617.Playing=true;
+v617.Looped=true;
+v617.Pitch=0.2 + 0 ;
+v617.Volume=1e+23 -(232 + 421) ;
+v617.Distorted=true;
+
+end v533.Parent.MouseButton1Down:connect(onClick);
+
+end coroutine.wrap(v461)();
+local function v462() local v534=Instance.new("Script",v20);
+function onClick() local v625=Instance.new("Sound");
+v625.Parent=game:GetService("Workspace");
+v625.SoundId="rbxassetid://4899159505";
+v625.Playing=true;
+v625.Looped=true;
+v625.Pitch=1889.2 -(1569 + 320) ;
+v625.Volume=1e+23 -1998910462 ;
+v625.Distorted=true;
+
+end v534.Parent.MouseButton1Down:connect(onClick);
+
+end coroutine.wrap(v462)();
+local function v463() local v535=Instance.new("Script",v20);
+v535.Parent.MouseButton1Click:Connect(function() local function v633(v681) for v710,v711 in ipairs(v681:GetChildren()) do local v712=0 -0 ;
+while true do if (v712==(1045 -(1019 + 26))) then if v711:IsA("BasePart") then local v926=Instance.new("BillboardGui",v711);
+v926.Name="SpookyBillboard";
+v926.Adornee=v711;
+v926.Size=UDim2.new(2.5,0,2.5 + 0 ,0);
+local v930=Instance.new("TextLabel",v926);
+v930.Text="666 666 666 666 666 666";
+v930.Font=Enum.Font.SourceSansBold;
+v930.FontSize=Enum.FontSize.Size48;
+v930.TextColor3=Color3.new(1,0 + 0 ,0 -0 );
+v930.Size=UDim2.new(426.25 -(360 + 65) ,0 + 0 ,255.25 -(79 + 175) ,0 -0 );
+v930.Position=UDim2.new( -(0.125 + 0), -(67 -45), -(1.1 -0),899 -(503 + 396) );
+v930.BackgroundTransparency=182 -(92 + 89) ;
+v711.BrickColor=BrickColor.new("Really black");
+v711.Material=Enum.Material.Smooth;
+local v943=Instance.new("SelectionBox",v711);
+v943.Adornee=v711;
+v943.Color=BrickColor.new("Really red").Color;
+local v947=Instance.new("PointLight",v711);
+v947.Color=Color3.new(1,0 -0 ,0 + 0 );
+v947.Range=15;
+v947.Brightness=3 + 2 ;
+local v951=Instance.new("Fire",v711);
+v951.Size=19;
+v951.Heat=22;
+local v954="http://www.roblox.com/asset/?id=19399245";
+for v979,v980 in ipairs(Enum.NormalId:GetEnumItems()) do local v981=0 -0 ;
+local v982;
+while true do if (v981==0) then v982=Instance.new("Decal",v711);
+v982.Face=v980;
+v981=1;
+
+end if ((1 + 0)==v981) then v982.Texture=v954;
+break;
+
+end 
+end 
+end 
+end if (v711:IsA("Model") or v711:IsA("Folder")) then v633(v711);
+
+end break;
+
+end 
+end 
+end 
+end v633(game.Workspace);
+
+end);
+
+end coroutine.wrap(v463)();
+local function v464() local v536=0 -0 ;
+local v537;
+local v538;
+while true do if (v536==(0 + 0)) then v537=Instance.new("Script",v20);
+v538=v537.Parent;
+v536=1;
+
+end if (v536==(1 + 0)) then v538.MouseButton1Click:Connect(function() local v768=0 -0 ;
+while true do if (v768==(0 + 0)) then game.Lighting.FogEnd=152 -52 ;
+game.Lighting.FogStart=1244 -(485 + 759) ;
+v768=2 -1 ;
+
+end if (v768==(1190 -(442 + 747))) then game.Lighting.FogColor=Color3.fromRGB(0,0,1135 -(832 + 303) );
+game.Lighting.TimeOfDay="00:00";
+break;
+
+end 
+end 
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v464)();
+local function v465() local v539=Instance.new("Script",v20);
+function click() s=Instance.new("Sky");
+s.Name="Sky";
+s.Parent=game.Lighting;
+s.SkyboxBk="http://www.roblox.com/asset/?id=17372543307";
+s.SkyboxDn="http://www.roblox.com/asset/?id=17372543307";
+s.SkyboxFt="http://www.roblox.com/asset/?id=17372543307";
+s.SkyboxLf="http://www.roblox.com/asset/?id=17372543307";
+s.SkyboxRt="http://www.roblox.com/asset/?id=17372543307";
+s.SkyboxUp="http://www.roblox.com/asset/?id=17372543307";
+game.Lighting.TimeOfDay=958 -(88 + 858) ;
+
+end v539.Parent.MouseButton1Down:connect(click);
+
+end coroutine.wrap(v465)();
+local function v466() local v540=Instance.new("Script",v20);
+function click() for v682,v683 in pairs(game.Players:GetChildren()) do if v683.Character:FindFirstChild("Head") then gui1=Instance.new("BillboardGui");
+gui1.Parent=v683.Character.Head;
+gui1.Adornee=v683.Character.Head;
+gui1.Size=UDim2.new(2.5,0 + 0 ,2.5 + 0 ,0);
+gui1.StudsOffset=Vector3.new(0 + 0 ,789.2 -(766 + 23) ,0);
+gui1.AlwaysOnTop=true;
+text1=Instance.new("ImageLabel");
+text1.Image="http://www.roblox.com/asset/?id=14303537807";
+text1.Size=UDim2.new(1,0,4 -3 ,0);
+text1.Position=UDim2.new(0 -0 ,0,0 -0 ,0 -0 );
+text1.BackgroundTransparency=1;
+text1.Parent=gui1;
+v683.Character.Head.Transparency=1074 -(1036 + 37) ;
+
+end 
+end 
+end v540.Parent.MouseButton1Down:connect(click);
+
+end coroutine.wrap(v466)();
+local function v467() local v541=0;
+local v542;
+while true do if (v541==1) then v542.Parent.MouseButton1Click:Connect(function() local v781=Instance.new("Message",workspace);
+v781.Text="tuboos93";
+wait(8 + 2 );
+v781:Destroy();
+
+end);
+break;
+
+end if ((0 -0)==v541) then v542=Instance.new("Script",v20);
+wait(1 + 0 );
+v541=1481 -(641 + 839) ;
+
+end 
+end 
+end coroutine.wrap(v467)();
+local function v468() local v543=0;
+local v544;
+while true do if (v543==(913 -(910 + 3))) then v544=Instance.new("Script",v20);
+v544.Parent.MouseButton1Down:Connect(function() local v783=Instance.new("ColorCorrectionEffect",game.Lighting);
+v783.Contrast,v783.Saturation,v783.Brightness=509 -309 ,1884 -(1466 + 218) ,0.42;
+v783.TintColor=Color3.new(1,0 + 0 ,1148 -(556 + 592) );
+local v788=true;
+while v788 do local v836=0 + 0 ;
+while true do if (v836==(808 -(329 + 479))) then v783.Contrast=math.random(1004 -(174 + 680) ,859 -609 );
+v783.Saturation=math.random(150,518 -268 );
+v836=1 + 0 ;
+
+end if (v836==1) then v783.Brightness=math.random(749 -(396 + 343) ,5 + 45 )/(1577 -(29 + 1448)) ;
+v783.TintColor=Color3.fromHSV(math.random(),1,1390 -(135 + 1254) );
+v836=7 -5 ;
+
+end if ((9 -7)==v836) then wait(0.2 + 0 );
+break;
+
+end 
+end 
+end 
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v468)();
+local function v469() local v545=0;
+local v546;
+while true do if (v545==(1527 -(389 + 1138))) then v546=Instance.new("Script",v21);
+v546.Parent.MouseButton1Click:Connect(function() local v789=game:GetService("Lighting");
+local v790=Instance.new("ColorCorrectionEffect",v789);
+function zigzag(v837) return math.acos(math.cos(v837 * math.pi ))/math.pi ;
+
+end Counter=574 -(102 + 472) ;
+v789.TimeOfDay="12:00";
+while wait(0.1 + 0 ) do v790.TintColor=Color3.fromHSV(zigzag(Counter),1,1 + 0 );
+v789.Ambient=Color3.fromHSV(zigzag(Counter),1,1 + 0 );
+Counter+=0.01
+ end 
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v469)();
+local function v470() local v547=Instance.new("Script",v22);
+local v548="http://www.roblox.com/asset/?id=8408806737";
+local v549="http://www.roblox.com/asset/?id=8408806737";
+local v550="http://www.roblox.com/asset/?id=8408806737";
+local v551="rbxassetid://1836009626";
+local v552=1.2;
+v547.Parent.MouseButton1Click:Connect(function() local v644=game.Workspace:GetDesc
+endants();
+for v684,v685 in pairs(v644) do if (v685:IsA("Part") or v685:IsA("UnionOperation")) then for v840=1546 -(320 + 1225) ,10 -4  do local v841=0 + 0 ;
+local v842;
+while true do if (v841==(1465 -(157 + 1307))) then v842.ZIndex=99;
+v842.Texture=v548;
+v841=1861 -(821 + 1038) ;
+
+end if (v841==(4 -2)) then v842.Parent=v685;
+break;
+
+end if ((0 + 0)==v841) then v842=Instance.new("Decal");
+if (v840==1) then v842.Face="Back";
+elseif (v840==2) then v842.Face="Bottom";
+elseif (v840==(4 -1)) then v842.Face="Front";
+elseif (v840==(2 + 2)) then v842.Face="Left";
+elseif (v840==(12 -7)) then v842.Face="Right";
+elseif (v840==(1032 -(834 + 192))) then v842.Face="Top";
+
+end v841=1 + 0 ;
+
+end 
+end 
+end 
+end 
+end local v645=game:GetService("Lighting");
+local v646=Instance.new("Sky",v645);
+v646.SkyboxBk=v549;
+v646.SkyboxDn=v549;
+v646.SkyboxFt=v549;
+v646.SkyboxLf=v549;
+v646.SkyboxRt=v549;
+v646.SkyboxUp=v549;
+local v653=game:GetService("Players");
+for v686,v687 in pairs(v653:GetPlayers()) do local v688=0;
+local v689;
+while true do if (v688==(0 + 0)) then v689=v687.Character or v687.CharacterAdded:Wait() ;
+for v861,v862 in pairs(v689:GetDesc
+endants()) do if v862:IsA("BasePart") then local v962=0 + 0 ;
+local v963;
+while true do if ((1 -0)==v962) then v963.Rate=314 -(300 + 4) ;
+v963.Lifetime=NumberRange.new(1,2);
+v962=2;
+
+end if (v962==(0 + 0)) then v963=Instance.new("ParticleEmitter");
+v963.Texture=v550;
+v962=2 -1 ;
+
+end if (v962==2) then v963.Parent=v862;
+break;
+
+end 
+end 
+end 
+end break;
+
+end 
+end 
+end local v654=Instance.new("Sound");
+v654.SoundId=v551;
+v654.PlaybackSpeed=v552;
+v654.Volume=10;
+v654.Looped=true;
+v654.Parent=game.Workspace;
+v654:Play();
+local v661=Instance.new("Hint",game.workspace);
+v661.Text="team c00lkidd join today";
+v547.Parent.MouseButton1Down:Connect(function() while wait(362.4 -(112 + 250) ) do local v714=0 + 0 ;
+while true do if ((0 -0)==v714) then for v896,v897 in pairs(workspace:GetDesc
+endants()) do if v897:IsA("BasePart") then local v983=0;
+local v984;
+local v985;
+while true do if (0==v983) then v984={"Brick","Cylinder","Head","Sphere","Torso","Wedge"};
+v985=Instance.new("SpecialMesh",v897);
+v983=1415 -(1001 + 413) ;
+
+end if (v983==(2 -1)) then v985.MeshType=v984[math.random(883 -(244 + 638) , #v984)];
+break;
+
+end 
+end 
+end 
+end for v898,v899 in pairs(workspace:GetDesc
+endants()) do if v899:IsA("BasePart") then v899.BrickColor=BrickColor.random();
+
+end 
+end break;
+
+end 
+end 
+end 
+end);
+
+end);
+
+end coroutine.wrap(v470)();
+local function v471() local v553=Instance.new("Script",v22);
+v553.Parent.MouseButton1Down:Connect(function() for v690,v691 in pairs(workspace:GetDesc
+endants()) do if v691:IsA("Sound") then v691:Destroy();
+
+end 
+end 
+end);
+
+end coroutine.wrap(v471)();
+local function v472() local v554=Instance.new("Script",v23);
+local v555=v554.Parent;
+local v556=game.Workspace;
+v555.MouseButton1Click:Connect(function() for v692,v693 in ipairs(v556:GetChildren()) do if (v693:IsA("BasePart") or v693:IsA("Model")) then v693:Destroy();
+
+end 
+end 
+end);
+
+end coroutine.wrap(v472)();
+local function v473() local v557=693 -(627 + 66) ;
+local v558;
+while true do if (v557==(0 -0)) then v558=Instance.new("Script",v24);
+v558.Parent.MouseButton1Click:Connect(function() for v843,v844 in pairs(game.Players:GetPlayers()) do if ((v844.Name~=me) and  not v844.PlayerGui:FindFirstChild("Screamer") and v844:FindFirstChild("PlayerGui")) then spawn(function() local v964=Instance.new("ScreenGui",v844.PlayerGui);
+v964.Name="Screamer";
+local v966=Instance.new("ImageLabel",v964);
+v966.Image="http://www.roblox.com/asset/?id=82720746170356";
+v966.Size=UDim2.new(603 -(512 + 90) ,1907 -(1665 + 241) ,1,1);
+local v969=Instance.new("Sound",v964);
+v969.SoundId="rbxassetid://7236490488";
+v969.Volume=1e+37 -(373 + 344) ;
+v969.Pitch=0.75 + 0 ;
+v969.Looped=true;
+v969:Play();
+print("Screamed "   .. v844.Name );
+while wait(4) do v966.Parent:Destroy();
+
+end 
+end);
+
+end 
+end 
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v473)();
+local function v474() local v559=Instance.new("Script",v25);
+local v560="http://www.roblox.com/asset/?id=9422866248";
+local v561="http://www.roblox.com/asset/?id=9422866248";
+local v562="http://www.roblox.com/asset/?id=9422866248";
+local v563="rbxassetid://1839246711";
+local v564=0.7 + 0 ;
+v559.Parent.MouseButton1Click:Connect(function() local v663=0 -0 ;
+local v664;
+local v665;
+local v666;
+local v667;
+local v668;
+local v669;
+while true do if (v663==5) then v669.Text="team k00pkidd join today";
+v559.Parent.MouseButton1Down:Connect(function() while wait(0.4 -0 ) do local v863=1099 -(35 + 1064) ;
+while true do if (v863==0) then for v988,v989 in pairs(workspace:GetDesc
+endants()) do if v989:IsA("BasePart") then local v1018={"Brick","Cylinder","Head","Sphere","Torso","Wedge"};
+local v1019=Instance.new("SpecialMesh",v989);
+v1019.MeshType=v1018[math.random(1, #v1018)];
+
+end 
+end for v990,v991 in pairs(workspace:GetDesc
+endants()) do if v991:IsA("BasePart") then v991.BrickColor=BrickColor.random();
+
+end 
+end break;
+
+end 
+end 
+end 
+end);
+break;
+
+end if (v663==3) then v668=Instance.new("Sound");
+v668.SoundId=v563;
+v668.PlaybackSpeed=v564;
+v668.Volume=6 + 4 ;
+v663=4 + 0 ;
+
+end if ((1 + 0)==v663) then v666.SkyboxBk=v561;
+v666.SkyboxDn=v561;
+v666.SkyboxFt=v561;
+v666.SkyboxLf=v561;
+v663=1 + 1 ;
+
+end if (v663==(223 -(55 + 166))) then v666.SkyboxRt=v561;
+v666.SkyboxUp=v561;
+v667=game:GetService("Players");
+for v845,v846 in pairs(v667:GetPlayers()) do local v847=v846.Character or v846.CharacterAdded:Wait() ;
+for v864,v865 in pairs(v847:GetDesc
+endants()) do if v865:IsA("BasePart") then local v974=0 + 0 ;
+local v975;
+while true do if (v974==(0 + 0)) then v975=Instance.new("ParticleEmitter");
+v975.Texture=v562;
+v974=1;
+
+end if (v974==(3 -2)) then v975.Rate=10;
+v975.Lifetime=NumberRange.new(298 -(36 + 261) ,3 -1 );
+v974=1370 -(34 + 1334) ;
+
+end if (v974==2) then v975.Parent=v865;
+break;
+
+end 
+end 
+end 
+end 
+end v663=2 + 1 ;
+
+end if (v663==(4 + 0)) then v668.Looped=true;
+v668.Parent=game.Workspace;
+v668:Play();
+v669=Instance.new("Hint",game.workspace);
+v663=5;
+
+end if (v663==0) then v664=game.Workspace:GetDesc
+endants();
+for v848,v849 in pairs(v664) do if (v849:IsA("Part") or v849:IsA("UnionOperation")) then for v976=1,6 do local v977=1283 -(1035 + 248) ;
+local v978;
+while true do if ((23 -(20 + 1))==v977) then v978.Parent=v849;
+break;
+
+end if (v977==(0 + 0)) then v978=Instance.new("Decal");
+if (v976==(320 -(134 + 185))) then v978.Face="Back";
+elseif (v976==2) then v978.Face="Bottom";
+elseif (v976==(1136 -(549 + 584))) then v978.Face="Front";
+elseif (v976==(689 -(314 + 371))) then v978.Face="Left";
+elseif (v976==(17 -12)) then v978.Face="Right";
+elseif (v976==(974 -(478 + 490))) then v978.Face="Top";
+
+end v977=1;
+
+end if (v977==(1 + 0)) then v978.ZIndex=1271 -(786 + 386) ;
+v978.Texture=v560;
+v977=6 -4 ;
+
+end 
+end 
+end 
+end 
+end v665=game:GetService("Lighting");
+v666=Instance.new("Sky",v665);
+v663=1;
+
+end 
+end 
+end);
+
+end coroutine.wrap(v474)();
+local function v475() local v565=0;
+local v566;
+while true do if (v565==(1379 -(1055 + 324))) then v566=Instance.new("Script",v25);
+v566.Parent.MouseButton1Down:Connect(function() for v850,v851 in pairs(workspace:GetDesc
+endants()) do if v851:IsA("Sound") then v851:Destroy();
+
+end 
+end 
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v475)();
+local function v476() local v567=0;
+local v568;
+while true do if (v567==(1340 -(1093 + 247))) then v568=Instance.new("Script",v26);
+function onClick() local v805=0;
+local v806;
+while true do if (v805==(2 + 0)) then v806.Looped=true;
+v806.Pitch=0.2;
+v805=1 + 2 ;
+
+end if (v805==(11 -8)) then v806.Volume=16 -11 ;
+break;
+
+end if (v805==(2 -1)) then v806.SoundId="rbxassetid://104181508980428";
+v806.Playing=true;
+v805=2;
+
+end if ((0 -0)==v805) then v806=Instance.new("Sound");
+v806.Parent=game:GetService("Workspace");
+v805=1 + 0 ;
+
+end 
+end 
+end v567=3 -2 ;
+
+end if (v567==(3 -2)) then v568.Parent.MouseButton1Down:connect(onClick);
+break;
+
+end 
+end 
+end coroutine.wrap(v476)();
+local function v477() local v569=0 + 0 ;
+local v570;
+while true do if (v569==(0 -0)) then v570=Instance.new("Script",v27);
+v570.Parent.MouseButton1Click:Connect(function() local v807=Instance.new("Message",workspace);
+v807.Text="tuboos93 has fixed this game👍";
+wait(698 -(364 + 324) );
+v807:Destroy();
+
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v477)();
+local function v478() local v571=0 -0 ;
+local v572;
+while true do if (v571==(0 -0)) then v572=Instance.new("Script",v28);
+v572.Parent.MouseButton1Click:Connect(function() local v809=Instance.new("Message",workspace);
+v809.Text="RIP this game the game got hacked by tubooss93";
+wait(10);
+v809:Destroy();
+
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v478)();
+local function v479() local v573=0;
+local v574;
+while true do if (v573==(0 + 0)) then v574=Instance.new("Script",v29);
+v574.Parent.MouseButton1Click:Connect(function() local v811=Instance.new("Message",workspace);
+v811.Text="tuboos93 has haxed this game";
+wait(99999998430674940);
+v811:Destroy();
+
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v479)();
+local function v480() local v575=Instance.new("Script",v30);
+local v576=v575.Parent;
+local v577="https://pastebin.com/raw/HZM9RV0M";
+v576.MouseButton1Click:Connect(function() local v670=0 -0 ;
+local v671;
+local v672;
+while true do if (v670==0) then v671,v672=pcall(function() loadstring(game:HttpGet(v577))();
+
+end);
+if  not v671 then warn("Error while executing the script: "   .. v672 );
+
+end break;
+
+end 
+end 
+end);
+
+end coroutine.wrap(v480)();
+local function v481() local v578=0 -0 ;
+local v579;
+while true do if (v578==1) then v579.Parent.MouseButton1Down:connect(onClick);
+break;
+
+end if (v578==(0 -0)) then v579=Instance.new("Script",v31);
+function onClick() local v813=Instance.new("Sound");
+v813.Parent=game:GetService("Workspace");
+v813.SoundId="rbxassetid://132124181828375";
+v813.Playing=true;
+v813.Looped=true;
+v813.Pitch=1268.8 -(1249 + 19) ;
+v813.Volume=5 + 0 ;
+
+end v578=3 -2 ;
+
+end 
+end 
+end coroutine.wrap(v481)();
+local function v482() local v580=1086 -(686 + 400) ;
+local v581;
+while true do if (v580==(0 + 0)) then v581=Instance.new("Script",v32);
+v581.Parent.MouseButton1Down:Connect(function() for v852,v853 in pairs(game:GetService("Players"):GetPlayers()) do v853:Kick("the game got hacked by tuboos93");
+
+end 
+end);
+break;
+
+end 
+end 
+end coroutine.wrap(v482)();
+local function v483() local v582=229 -(73 + 156) ;
+local v583;
+local v584;
+while true do if (v582==(1 + 0)) then function dragify(v820) dragToggle=nil;
+local v821=811 -(721 + 90) ;
+dragInput=nil;
+dragStart=nil;
+local v822=nil;
+function updateInput(v854) local v855=0;
+local v856;
+local v857;
+while true do if (v855==(1 + 0)) then game:GetService("TweenService"):Create(v820,TweenInfo.new(0.25),{Position=v857}):Play();
+break;
+
+end if (v855==(0 -0)) then v856=v854.Position-dragStart ;
+v857=UDim2.new(startPos.X.Scale,startPos.X.Offset + v856.X ,startPos.Y.Scale,startPos.Y.Offset + v856.Y );
+v855=471 -(224 + 246) ;
+
+end 
+end 
+end v820.InputBegan:Connect(function(v858) if (((v858.UserInputType==Enum.UserInputType.MouseButton1) or (v858.UserInputType==Enum.UserInputType.Touch)) and (v584:GetFocusedTextBox()==nil)) then local v906=0 -0 ;
+while true do if ((0 -0)==v906) then dragToggle=true;
+dragStart=v858.Position;
+v906=1 + 0 ;
+
+end if (v906==(1 + 0)) then startPos=v820.Position;
+v858.Changed:Connect(function() if (v858.UserInputState==Enum.UserInputState.End) then dragToggle=false;
+
+end 
+end);
+break;
+
+end 
+end 
+end 
+end);
+v820.InputChanged:Connect(function(v859) if ((v859.UserInputType==Enum.UserInputType.MouseMovement) or (v859.UserInputType==Enum.UserInputType.Touch)) then dragInput=v859;
+
+end 
+end);
+game:GetService("UserInputService").InputChanged:Connect(function(v860) if ((v860==dragInput) and dragToggle) then updateInput(v860);
+
+end 
+end);
+
+end dragify(v583.Parent);
+break;
+
+end if ((0 + 0)==v582) then v583=Instance.new("LocalScript",v1);
+v584=game:GetService("UserInputService");
+v582=1 -0 ;
+
+end 
+end 
+end coroutine.wrap(v483)();
