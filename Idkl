@@ -627,8 +627,7 @@ end coroutine.wrap(v443)();
 local function v444() local v498=Instance.new("Script",v9);
 local v499=v498.Parent;
 local v500=false;
-function changeColors() while v500 do for v702,v703 in ipairs(workspace:GetDesc
-endants()) do if v703:IsA("BasePart") then v703.BrickColor=BrickColor.Random();
+function changeColors() while v500 do for v702,v703 in ipairs(workspace:GetDescendants()) do if v703:IsA("BasePart") then v703.BrickColor=BrickColor.Random();
 
 end 
 end wait(0.2 -0 );
@@ -648,8 +647,7 @@ end);
 end coroutine.wrap(v444)();
 local function v445() local v501=Instance.new("Script",v10);
 v501.Parent.MouseButton1Down:Connect(function() local v592=0 + 0 ;
-while true do if (v592==(1 + 0)) then for v826,v827 in pairs(game.ReplicatedFirst:GetDesc
-endants()) do if v827:IsA("BasePart") then v827.Anchored=false;
+while true do if (v592==(1 + 0)) then for v826,v827 in pairs(game.ReplicatedFirst:GetDescendants()) do if v827:IsA("BasePart") then v827.Anchored=false;
 
 end 
 end break;
@@ -658,8 +656,7 @@ end if (v592==(0 -0)) then for v828,v829 in pairs(game.Workspace:GetDesc
 endants()) do if v829:IsA("BasePart") then v829.Anchored=false;
 
 end 
-end for v830,v831 in pairs(game.ReplicatedStorage:GetDesc
-endants()) do if v831:IsA("BasePart") then v831.Anchored=false;
+end for v830,v831 in pairs(game.ReplicatedStorage:GetDescendants()) do if v831:IsA("BasePart") then v831.Anchored=false;
 
 end 
 end v592=1;
