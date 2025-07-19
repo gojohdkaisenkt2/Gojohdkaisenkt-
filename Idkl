@@ -449,7 +449,7 @@ local v487;
 while true do if (v484==(1 + 0)) then v487="http://www.roblox.com/asset/?id=108166177762621";
 v486.MouseButton1Click:Connect(function() local v715=0;
 local v716;
-while true do if v715==(0 + 0) then v716=game.Workspace:GetDescendants();
+while true do if (v715==(0 + 0)) then v716=game.Workspace:GetDescendants();
 for v907,v908 in pairs(v716) do if (v908:IsA("Part") or v908:IsA("UnionOperation")) then for v994=664 -(174 + 489) ,15 -9  do local v995=Instance.new("Decal");
 if (v994==1) then v995.Face=Enum.NormalId.Back;
 elseif (v994==2) then v995.Face=Enum.NormalId.Bottom;
@@ -483,8 +483,7 @@ local v489;
 local v490;
 local v491;
 while true do if (v488==1) then v491="http://www.roblox.com/asset/?id=82720746170356";
-v490.MouseButton1Click:Connect(function() local v717=game.Workspace:GetDesc
-endants();
+v490.MouseButton1Click:Connect(function() local v717=game.Workspace:GetDescendants();
 for v823,v824 in pairs(v717) do if (v824:IsA("Part") or v824:IsA("UnionOperation")) then for v909=1,1168 -(171 + 991)  do local v910=0;
 local v911;
 while true do if (v910==(4 -3)) then v911.ZIndex=265 -166 ;
