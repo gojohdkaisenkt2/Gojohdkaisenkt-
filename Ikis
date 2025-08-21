@@ -1,40 +1,303 @@
-local function QFCS_fake_script() -- I lazy and my draggable is nil
-	local script = Instance.new('LocalScript', f)
+local function DeleteMyGUI()
+    local CoreGui = game:GetService("CoreGui")
+    local PlayerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+    
+    local targetGUI = "super big olimen oh hell fucking no"
+    local found = false
+    
+    for _, item in pairs(CoreGui:GetChildren()) do
+        if item:IsA("ScreenGui") and item.Name == targetGUI then
+            item:Destroy()
+            found = true
+        end
+    end
+    
+    for _, item in pairs(PlayerGui:GetChildren()) do
+        if item:IsA("ScreenGui") and item.Name == targetGUI then
+            item:Destroy()
+            found = true
+        end
+    end
+    
+    for _, item in pairs(CoreGui:GetDescendants()) do
+        if item:IsA("ScreenGui") and item.Name == targetGUI then
+            item:Destroy()
+            found = true
+        end
+    end
+    
+    return found
+end
 
-	local UIS = game:GetService("UserInputService")
-	function dragify(f)
-	    dragToggle = nil
-	    local dragSpeed = -1
-	    dragInput = nil
-	    dragStart = nil
-	    local dragPos = nil
-	    function updateInput(input)
-	        local Delta = input.Position - dragStart
-	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-	        game:GetService("TweenService"):Create(f, TweenInfo.new(0.25), {Position = Position}):Play()
-	    end
-	    f.InputBegan:Connect(function(input)
-	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-	            dragToggle = true
-	            dragStart = input.Position
-	            startPos = Frame.Position
-	            input.Changed:Connect(function()
-	                if input.UserInputState == Enum.UserInputState.End then
-	                    dragToggle = false
-	                end
-	            end)
-	        end
-	    end)
-	    f.InputChanged:Connect(function(input)
-	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-	            dragInput = input
-	        end
-	    end)
-	    game:GetService("UserInputService").InputChanged:Connect(function(input)
-	        if input == dragInput and dragToggle then
-	            updateInput(input)
-	        end
-	    end)
+local function AdvancedDelete()
+    local CoreGui = game:GetService("CoreGui")
+    local targetName = "super big olimen oh hell fucking no"
+    
+    local foundGUI = CoreGui:FindFirstChild(targetName)
+    if foundGUI and foundGUI:IsA("ScreenGui") then
+        foundGUI:Destroy()
+        return
+    end
+end
+
+local function NuclearOption()
+    local CoreGui = game:GetService("CoreGui")
+    local targetName = "super big olimen oh hell fucking no"
+    
+    for _, gui in pairs(CoreGui:GetChildren()) do
+        if gui:IsA("ScreenGui") and gui.Name == targetName then
+            gui:Destroy()
+        end
+    end
+end
+
+DeleteMyGUI() 
+AdvancedDelete()
+NuclearOption()
+
+                                                                                                                                                               local TweenService = game:GetService("TweenService")
+local luauxV5 = Instance.new("ScreenGui")
+luauxV5.Name = "super big olimen oh hell fucking no"
+luauxV5.IgnoreGuiInset = true
+luauxV5.ResetOnSpawn = false
+luauxV5.Parent = game:GetService("CoreGui") -- CoreGui is best👍🔥
+
+local Frame = Instance.new("Frame") -- is just a Instance for Frame
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Size = UDim2.new(0.7, 0, 0.6, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Frame.BackgroundTransparency = 0.25
+Frame.BorderSizePixel = 1  Frame.BorderColor3 = Color3.fromRGB(20, 20, 20)
+Frame.Parent = luauxV5 -- dad is big oli men idk
+local Corner = Instance.new("UICorner")-- UICorner make My fucking gui best😍
+Corner.CornerRadius = UDim.new(0, 10)
+Corner.Parent = Frame
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Thickness = 2
+UIStroke.Transparency = 0
+UIStroke.Parent = Frame
+-- Loading Circle like luna yesss bro is good
+local Circle = Instance.new("ImageLabel")
+Circle.AnchorPoint = Vector2.new(1, 0.5)
+Circle.Position = UDim2.new(0.45, -10, 0.45, 0)
+Circle.Size = UDim2.new(0, 180, 0, 180)
+Circle.BackgroundTransparency = 1
+Circle.Image = "rbxassetid://80990588449079"
+Circle.ImageTransparency = 1
+Circle.Parent = Frame
+local Button = Instance.new("TextButton")
+Button.Size = UDim2.new(0, 150, 0, 40)
+Button.Position = UDim2.new(0.5, -50, 0.05, 0)
+Button.Text = "Toggle Ui"
+Button.Parent = luauxV5    Button.BackgroundTransparency = 0.35                            
+Button.AutoButtonColor = false                                                                                                local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0, 5)   Button.BackgroundColor3 = Color3.fromRGB(20, 20, 20)    Button.TextColor3 = Color3.fromRGB(255, 255, 255) 
+Corner.Parent = Button    Button.Visible = false 
+-- Title means: u are skids stop scrolling now
+local Title = Instance.new("TextLabel")
+Title.AnchorPoint = Vector2.new(0, 0.5)
+Title.Position = UDim2.new(0.45, 10, 0.4, 0)
+Title.Size = UDim2.new(0.5, 0, 0.2, 0)
+Title.BackgroundTransparency = 1
+Title.Font = Enum.Font.GothamBold
+Title.Text = "luau x SS V5.1 big update"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextTransparency = 1
+Title.TextScaled = true
+Title.Parent = Frame
+
+-- nott tuff
+local Subtitle = Instance.new("TextLabel")
+Subtitle.AnchorPoint = Vector2.new(0, 0)
+Subtitle.Position = UDim2.new(0.46, 10, 0.55, 0)
+Subtitle.Size = UDim2.new(0.5, 0, 0.1, 0)
+Subtitle.BackgroundTransparency = 1
+Subtitle.Font = Enum.Font.Gotham
+Subtitle.Text = "by gojohdkaisenkt"
+Subtitle.TextColor3 = Color3.fromRGB(200, 200, 200)
+Subtitle.TextTransparency = 1
+Subtitle.TextScaled = true
+Subtitle.Parent = Frame
+
+local Version = Instance.new("TextLabel")
+Version.AnchorPoint = Vector2.new(1, 1)
+Version.Position = UDim2.new(0.98, 0, 0.95, 0)
+Version.Size = UDim2.new(0.3, 0, 0.1, 0)
+Version.BackgroundTransparency = 1
+Version.Font = Enum.Font.Gotham
+Version.Text = "Beta 5.1" -- yes is luau X v5.1 super big update but... stop skids now
+Version.TextColor3 = Color3.fromRGB(220, 220, 220)
+Version.TextTransparency = 1
+Version.TextScaled = true
+Version.TextXAlignment = Enum.TextXAlignment.Right
+Version.Parent = Frame
+
+-- 😒(lazy) don't skids it
+TweenService:Create(Circle, TweenInfo.new(1), {ImageTransparency = 0}):Play()
+TweenService:Create(Title, TweenInfo.new(1), {TextTransparency = 0}):Play()
+TweenService:Create(Subtitle, TweenInfo.new(1), {TextTransparency = 0}):Play()
+TweenService:Create(Version, TweenInfo.new(1), {TextTransparency = 0}):Play()
+
+pcall(function()
+task.spawn(function()
+while Circle.Parent and Circle.Visible do
+Circle.Rotation = (Circle.Rotation + 5) % 360
+task.wait(0.03)
+end
+end)
+end)
+wait(4)
+
+pcall(function()
+TweenService:Create(Circle, TweenInfo.new(1), {ImageTransparency = 1}):Play()
+TweenService:Create(Title, TweenInfo.new(1), {TextTransparency = 1}):Play()
+TweenService:Create(Subtitle, TweenInfo.new(1), {TextTransparency = 1}):Play()
+TweenService:Create(Version, TweenInfo.new(1), {TextTransparency = 1}):Play()
+end)
+wait(1)
+pcall(function()
+TweenService:Create(Frame, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+Size = UDim2.new(0.87, 0, 0.75, 0)
+}):Play() end) -- use end) to close function if you not dumbass NIGGER
+local function QFCS_fake_script() -- I lazy and my draggable is nil
+local script = Instance.new('LocalScript', Frame)
+
+local UIS = game:GetService("UserInputService")  
+function dragify(Frame)  
+    dragToggle = nil  
+    local dragSpeed = -1  
+    dragInput = nil  
+    dragStart = nil  
+    local dragPos = nil  
+    function updateInput(input)  
+        local Delta = input.Position - dragStart  
+        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)  
+        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.5), {Position = Position}):Play()  
+    end  
+    Frame.InputBegan:Connect(function(input)  
+        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then  
+            dragToggle = true  
+            dragStart = input.Position  
+            startPos = Frame.Position  
+            input.Changed:Connect(function()  
+                if input.UserInputState == Enum.UserInputState.End then  
+                    dragToggle = false  
+                end  
+            end)  
+        end  
+    end)  
+    Frame.InputChanged:Connect(function(input)  
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then  
+            dragInput = input  
+        end  
+    end)  
+    game:GetService("UserInputService").InputChanged:Connect(function(input)  
+        if input == dragInput and dragToggle then  
+            updateInput(input)  
+        end  
+    end)  
+end  
+  
+dragify(script.Parent)
+
+end
+coroutine.wrap(QFCS_fake_script)()
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Thickness = 1
+UIStroke.Transparency = 0
+UIStroke.Parent = Frame
+pcall(function()
+local toggletab = "rbxassetid://112941463599795" -- ready for ImageLabel LoL skids
+local offtab = "rbxassetid://109863274414818" -- 😐
+local script = "rbxassetid://116592854241448"
+local home = "rbxassetid://11347112400"
+local Setting = "rbxassetid://14134158045"
+local X = "rbxassetid://112774396559653"
+local logo = "rbxassetid://123145425569096"
+local admin = "rbxassetid://5183840354"
+local game = "rbxassetid://94219228196230"
+local execute = "rbxassetid://84159029790324"
+local scanner = "rbxassetid://99625725727957"
+local Clear = "rbxassetid://105955025341798"
+local Error = "rbxassetid://5107154082"
+local success = "rbxassetid://82668563249216"
+local WARNING = "rbxassetid://85147473315465"
+local jumpscare = "rbxassetid://106510700539466"
+local Skybox = "rbxassetid://106510700539466"
+local localface = "rbxassetid://96074603352531"
+local discord = "rbxassetid://94434236999817"
+local decal = "rbxassetid://123694661930746"
+local player = game.Players.LocalPlayer.Name
+end)
+pcall(function() -- I just spam pcall function🤓👉
+pcall(function()
+pcall(function()
+end)
+end)
+end)
+local f = Instance.new("Frame")
+f.Size = UDim2.new(1, 0, 0.14, 0)
+f.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+f.BackgroundTransparency = 0.99
+f.BorderSizePixel = 2
+f.BorderColor3 = Color3.fromRGB(20, 20, 20)
+f.Parent = Frame
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Thickness = 2
+UIStroke.Transparency = 0
+UIStroke.Parent = f
+local Corner = Instance.new("UICorner") -- ...
+Corner.CornerRadius = UDim.new(0, 10)
+Corner.Parent = f
+local Subtitl = Instance.new("TextLabel")
+Subtitl.Position = UDim2.new(0.06, 0, 0, 0)
+Subtitl.Size = UDim2.new(0.5, 0, 0.1, 0)
+Subtitl.BackgroundTransparency = 1
+Subtitl.Font = Enum.Font.Gotham
+Subtitl.Text = "luau x SS V5.1 | rework by gojohdkaisenkt"
+Subtitl.TextColor3 = Color3.fromRGB(255, 255, 255)
+Subtitl.TextTransparency = 0
+Subtitl.TextScaled = true
+Subtitl.Parent = Frame
+local img = Instance.new("ImageLabel")
+img.Size = UDim2.new(0, 40, 0, 50) -- khung ô ảnh
+img.Position = UDim2.new(0, 5, 0.5, -20)
+img.BackgroundTransparency = 1
+img.Image = "rbxassetid://123145425569096"
+img.Parent = f
+
+-- ts pmo🥀🥀💔
+local aspect = Instance.new("UIAspectRatioConstraint")
+aspect.AspectRatio = 1.2
+aspect.Parent = img
+
+local toggle = Instance.new("TextButton")
+toggle.Size = UDim2.new(0, 40, 0, 40)
+toggle.Position = UDim2.new(0.93, 0, 0.005, 0)
+toggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggle.Font = Enum.Font.GothamBold
+toggle.Parent = Frame
+toggle.Text = "X"     toggle.TextSize = 35
+toggle.BorderSizePixel = 1  toggle.BorderColor3 = Color3.fromRGB(0, 0, 0)                                                                                                                                                 local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 10)
+corner.Parent = toggle
+toggle.BackgroundTransparency = 0.9
+local aspect = Instance.new("UIAspectRatioConstraint")
+aspect.AspectRatio = 1
+aspect.Parent = icon
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Thickness = 1
+UIStroke.Transparency = 0
+UIStroke.Parent = toggle
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+pcall(function()
+toggle.MouseButton1Down:connect(function()
+TweenService:Create(Frame, TweenInfo.new(1.5), {BackgroundTransparency = 1}):Play() wait(1) Frame.Visible = false Button.Visible = true end) end)                          
+          Button.MouseButton1Down:connect(function()          
+                 Button.Visible = false Frame.Visible = true TweenService:Create(Frame, TweenInfo.new(1.5), {BackgroundTransparency = 0.25}):Play() end)                         	    end)
 	end
 	
 	dragify(script.Parent)
