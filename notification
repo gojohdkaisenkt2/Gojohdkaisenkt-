@@ -1,0 +1,119 @@
+
+local ErrorIcon = "rbxassetid://5107154082"
+local SuccessIcon = "rbxassetid://82668563249216"
+local WarningIcon = "rbxassetid://85147473315465"
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local PlayerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "NotificationGui"
+ScreenGui.Parent = PlayerGui
+local Holder = Instance.new("Frame")
+Holder.Name = "Holder"
+Holder.Size = UDim2.new(0, 300, 1, -40)
+Holder.Position = UDim2.new(1, -310, 1, -20) -- nằm sát BOTTOM RIGHT
+Holder.AnchorPoint = Vector2.new(0,1) -- neo theo BOTTOM
+Holder.BackgroundTransparency = 1
+Holder.Parent = ScreenGui
+local Stroke3 = Instance.new("UIStroke")
+Stroke3.Thickness = 2
+Stroke3.Color = Color3.fromRGB(20, 20, 20)
+Stroke3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Stroke3.Parent = Holder
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Padding = UDim.new(0, 6)
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom -- stack từ dưới lên
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Parent = Holder
+local function CreateNotification(title, msg, type, duration)
+	duration = duration or 5
+	local Notif = Instance.new("Frame")
+	Notif.Size = UDim2.new(0, 300, 0, 70)
+	Notif.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+	Notif.BorderSizePixel = 0
+	Notif.ClipsDescendants = true
+	Notif.Parent = Holder
+	Notif.BackgroundTransparency = 0.1
+	Notif.LayoutOrder = -tick() 
+ local Stroke = Instance.new("UIStroke")
+Stroke.Thickness = 2
+Stroke.Color = Color3.fromRGB(20, 20, 20)
+Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Stroke.Parent = Notif
+	local corner = Instance.new("UICorner")
+	corner.CornerRadius = UDim.new(0, 10)
+	corner.Parent = Notif
+	local Icon = Instance.new("ImageLabel")
+	Icon.Size = UDim2.new(0, 40, 0, 40)
+	Icon.Position = UDim2.new(0, 10, 0, 15)
+	Icon.BackgroundTransparency = 1
+	Icon.Parent = Notif
+
+	if type == "Error" then
+		Icon.Image = ErrorIcon
+	elseif type == "Success" then
+		Icon.Image = SuccessIcon
+	elseif type == "Warning" then
+		Icon.Image = WarningIcon
+	else
+		Icon.Image = SuccessIcon
+	end
+
+	local Title = Instance.new("TextLabel")
+	Title.Size = UDim2.new(1, -60, 0, 20)
+	Title.Position = UDim2.new(0, 60, 0, 10)
+	Title.BackgroundTransparency = 1
+	Title.Text = title
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.Font = Enum.Font.GothamBold
+	Title.TextSize = 14
+	Title.TextXAlignment = Enum.TextXAlignment.Left
+	Title.Parent = Notif
+
+	local Desc = Instance.new("TextLabel")
+	Desc.Size = UDim2.new(1, -60, 0, 30)
+	Desc.Position = UDim2.new(0, 60, 0, 30)
+	Desc.BackgroundTransparency = 1
+	Desc.Text = msg
+	Desc.TextColor3 = Color3.fromRGB(200, 200, 200)
+	Desc.Font = Enum.Font.Gotham
+	Desc.TextSize = 13
+	Desc.TextXAlignment = Enum.TextXAlignment.Left
+	Desc.TextYAlignment = Enum.TextYAlignment.Top
+	Desc.Parent = Notif
+
+	local TimeBar = Instance.new("Frame")
+	TimeBar.Size = UDim2.new(1, 0, 0, 4)
+	TimeBar.Position = UDim2.new(0, 0, 1, -4)
+	TimeBar.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+	TimeBar.BorderSizePixel = 0
+	TimeBar.Parent = Notif
+
+	local barCorner = Instance.new("UICorner")
+	barCorner.CornerRadius = UDim.new(1, 0)
+	barCorner.Parent = TimeBar
+
+	local Sound = Instance.new("Sound")
+	Sound.SoundId = "rbxassetid://4590657391" -- đổi tuỳ ý
+	Sound.Volume = 1
+	Sound.Parent = Notif
+	Sound:Play()
+
+	local tween = TweenService:Create(TimeBar, TweenInfo.new(duration, Enum.EasingStyle.Linear), {
+		Size = UDim2.new(0, 0, 0, 4)
+	})
+	tween:Play()
+
+	task.delay(duration, function()
+		Notif:TweenSize(UDim2.new(0, 300, 0, 0), "Out", "Quad", 0.5, true, function()
+			Notif:Destroy()
+		end)
+	end)
+end
+task.wait(2)
+CreateNotification("Error!", "Đã có lỗi xảy ra", "Error", 5)
+task.wait(1)
+CreateNotification("Success!", "Nhiệm vụ hoàn thành", "Success", 5)
+task.wait(1)
+CreateNotification("Warning!", "Cẩn thận!", "Warning", 5)
