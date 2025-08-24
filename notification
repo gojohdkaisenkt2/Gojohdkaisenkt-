@@ -15,11 +15,6 @@ Holder.Position = UDim2.new(1, -310, 1, -20) -- nằm sát BOTTOM RIGHT
 Holder.AnchorPoint = Vector2.new(0,1) -- neo theo BOTTOM
 Holder.BackgroundTransparency = 1
 Holder.Parent = ScreenGui
-local Stroke3 = Instance.new("UIStroke")
-Stroke3.Thickness = 2
-Stroke3.Color = Color3.fromRGB(20, 20, 20)
-Stroke3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-Stroke3.Parent = Holder
 local UIListLayout = Instance.new("UIListLayout")
 UIListLayout.Padding = UDim.new(0, 6)
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
@@ -111,9 +106,4 @@ Stroke.Parent = Notif
 		end)
 	end)
 end
-task.wait(2)
-CreateNotification("Error!", "Đã có lỗi xảy ra", "Error", 5)
-task.wait(1)
-CreateNotification("Success!", "Nhiệm vụ hoàn thành", "Success", 5)
-task.wait(1)
-CreateNotification("Warning!", "Cẩn thận!", "Warning", 5)
+CreateNotification("welcome to luau x SS V5.1", 5)
