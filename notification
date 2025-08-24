@@ -2,12 +2,11 @@
 local ErrorIcon = "rbxassetid://5107154082"
 local SuccessIcon = "rbxassetid://82668563249216"
 local WarningIcon = "rbxassetid://85147473315465"
-local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
-local PlayerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "NotificationGui"
-ScreenGui.Parent = PlayerGui
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ResetOnSpawn = false
 local Holder = Instance.new("Frame")
 Holder.Name = "Holder"
 Holder.Size = UDim2.new(0, 300, 1, -40)
